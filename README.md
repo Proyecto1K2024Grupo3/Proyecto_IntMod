@@ -1,5 +1,11 @@
 # Proyecto_IntMod
-### Sistema de información
+
+Autores: 
+- Pablo Morillas Esteve
+- Emilio Garcia Muñoz
+- Sergio Llorente Gonzalez
+
+## Sistema de información
 
 Una tienda de videojuegos vende merchandising, consolas y videojuegos. De estos productos se debe almacenar el precio, número de existencias y nombre. De los videojuegos también se quiere saber la fecha de lanzamiento.
 
