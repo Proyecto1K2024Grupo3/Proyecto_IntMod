@@ -19,3 +19,6 @@ Los productos los suministran diferentes proveedores, un producto solo puede ser
 
 La tienda colabora con influencers para promocionar productos, interesa registrar el nombre de cada influencer para identificarlo, su usuario en redes sociales y la tarifa por la colaboración con la tienda. Un influencer solo puede tener una promoción, y un producto puede ser promocionado por varios influencers.
 
+## Modelo entidad relación
+
+![imatge](https://github.com/user-attachments/assets/d72a11f4-dc89-48ce-bbd7-1b0963b9e229)
