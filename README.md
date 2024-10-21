@@ -1,9 +1,10 @@
 # Proyecto_IntMod
 
-Autores: 
-- Pablo Morillas Esteve
-- Emilio Garcia Muñoz
-- Sergio Llorente Gonzalez
+Autores:
+
+- [Pablo Morillas Esteve](https://github.com/pabloskii2006)
+- [Emilio García Muñoz](https://github.com/Emilsito)
+- [Sergio Llorente Gonzalez](https://github.com/CaulShiverss)
 
 ## Sistema de información
 
