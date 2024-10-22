@@ -22,7 +22,8 @@ La tienda colabora con influencers para promocionar productos, interesa registra
 
 ## Modelo entidad relación
 
-![imatge](https://github.com/user-attachments/assets/d72a11f4-dc89-48ce-bbd7-1b0963b9e229)
+![image](https://github.com/user-attachments/assets/ebfbf286-0d48-47ab-8ff3-2dde47d9965b)
+
 
 ![IMG_0415(1)](https://github.com/user-attachments/assets/06e6c13e-6aee-4efd-86cc-38fa2f94badc)
 
