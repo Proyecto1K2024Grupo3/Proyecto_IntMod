@@ -8,11 +8,11 @@ Autores:
 
 ## Sistema de información
 
-Una tienda de videojuegos vende merchandising, consolas y videojuegos. De estos productos se debe almacenar el precio, número de existencias y nombre. De los videojuegos también se quiere saber la fecha de lanzamiento.
+Una tienda de videojuegos vende merchandising, consolas y videojuegos. De estos productos se debe almacenar el precio, número de existencias y nombre. De los videojuegos se quiere saber la fecha de lanzamiento y de el merchandising el tipo y el tamaño. Hay que almacenar tambíen que consolas han sustituido a otras consolas.
 
-De los clientes que compran en la tienda se requiere conocer el nombre, el teléfono de contacto y el codigo de cliente. De cada compra se debe registrar la fecha y si se ha usado alguna promoción. Los clientes pueden participar en partidas de videojuegos que se organizan en salas de la tienda. Un cliente puede comprar más de un prodcutos y un producto puede ser comprado por varios clientes.
+De los clientes que compran en la tienda se requiere conocer el nombre, el teléfono de contacto y el codigo de cliente. De cada compra se debe registrar la fecha y si se ha usado alguna promoción.  Un cliente puede comprar más de un prodcutos y un producto puede ser comprado por varios clientes.
 
-Cada partida se identifica por un numero correlativo y hay que registrar en que sala se juega. Una partida tiene que ser jugada por dos clientes. De cada partida debe almacenarse el ganador y la duracion de esta.
+Los clientes pueden participar en partidas de videojuegos que se organizan en salas de la tienda. Cada partida se identifica por un numero correlativo y hay que registrar en que sala se juega. Una partida tiene que ser jugada por dos clientes. De cada partida debe almacenarse el ganador y la duracion de esta.
 
 Los empleados se encargan de atender a los clientes y manejar el inventario de los productos. Del empleado interesa registrar el DNI, la fecha de nacimiento, el teléfono de contacto y el codigo de empleado. Un empleado puede atender a varios clientes y un cliente puede ser atendido por varios empleados. 
 
@@ -28,5 +28,5 @@ La tienda colabora con un influencer para promocionar varios productos, interesa
 
 
 
-![IMG_0415(1)](https://github.com/user-attachments/assets/06e6c13e-6aee-4efd-86cc-38fa2f94badc)
+
 
