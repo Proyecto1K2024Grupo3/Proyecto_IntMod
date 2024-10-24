@@ -10,7 +10,7 @@ Autores:
 
 Una tienda de videojuegos vende merchandising, consolas y videojuegos. De estos productos se debe almacenar el precio, número de existencias y nombre. De los videojuegos se quiere saber la fecha de lanzamiento y de el merchandising el tipo y el tamaño. Hay que almacenar tambíen que consolas han sustituido a otras consolas.
 
-De los clientes que compran en la tienda se requiere conocer el nombre, el teléfono de contacto y el codigo de cliente. De cada compra se debe registrar la fecha y si se ha usado alguna promoción.  Un cliente puede comprar más de un prodcutos y un producto puede ser comprado por varios clientes.
+De los clientes que compran en la tienda se requiere conocer el nombre, el teléfono de contacto y el codigo de cliente. De cada compra se debe registrar la fecha y si se ha usado alguna promoción.  Un cliente puede comprar más de un productos y un producto puede ser comprado por varios clientes.
 
 Los clientes pueden participar en partidas de videojuegos que se organizan en salas de la tienda. Cada partida se identifica por un numero correlativo y hay que registrar en que sala se juega. Una partida tiene que ser jugada por dos clientes. De cada partida debe almacenarse el ganador y la duracion de esta.
 
@@ -20,11 +20,21 @@ Existe un inventario de productos el cual es llevado por empleados. Varios emple
 
 Los productos los suministran diferentes proveedores, un producto solo puede ser suministrado por un proveedor y un proveedor puede suministrar diferentes productos, de cada proveedor se desea conocer el NIF, nombre y direccion.
 
-La tienda colabora con un influencer para promocionar varios productos, interesa registrar el nombre del influencer para identificarlo, su usuario en redes sociales y la tarifa por la colaboración con la tienda. Este influencer puede promocionar varios productos
+La tienda colabora con influencers para promocionar sus productos, interesa registrar el nombre del influencer para identificarlo, su usuario en redes sociales y la tarifa por la colaboración con la tienda. Cada influencer puede promocionar varios productos y los producto pueden ser promocionados por varios influencers.
 
 ## Modelo entidad relación
 
 ![imatge](https://github.com/user-attachments/assets/d6bd1e93-ea5d-48c2-b0da-d42b13b77574)
+
+## Decisiones
+
+En la tienda hay varias salas en las que se juegan partidas entre dos clientes. Queremos recoger estos datos para en caso de alguna incidencia poder identificar que dos clientes se encontraban en la sala. Y almacenamos el ganador de cada partida porque el que mas partidas gane al mes se lleva un premio.
+
+Queremos controlar el inventario de la tienda, por lo tanto almacenamos que empleados han organizado cada producto. Hemos decidido hacerlo de esta manera porque cada empleado se encargará de la integridad de sus productos. Un empleado se encargá de el merchandising, otro de las consolas... etc.
+
+Hemos decidido recoger la tarifa de cada promoción en el atributo porque es un precio que depende de la repercusion del colaborador. A Ibai no le pagariamos lo mismo que a Aitor Medrano.
+
+
 
 
 
