@@ -24,7 +24,8 @@ La tienda colabora con influencers para promocionar sus productos, interesa regi
 
 ## Modelo entidad relación
 
-![imatge](https://github.com/user-attachments/assets/d6bd1e93-ea5d-48c2-b0da-d42b13b77574)
+![imatge](https://github.com/user-attachments/assets/20042a02-c22e-424e-83f2-1b9a4b39cb27)
+
 
 ## Decisiones
 
