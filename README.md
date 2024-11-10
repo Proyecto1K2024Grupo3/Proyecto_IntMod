@@ -36,6 +36,11 @@ Queremos controlar el inventario de la tienda, por lo tanto almacenamos que empl
 Hemos decidido recoger la tarifa de cada promoción en el atributo porque es un precio que depende de la repercusion del colaborador. A Ibai no le pagariamos lo mismo que a Aitor Medrano.
 
 
+## Imagen del modelo relacional:
+
+![image](https://github.com/user-attachments/assets/4bf9a296-515a-46fb-9a74-6e2e6ebbc34f)
+
+
 
 
 
