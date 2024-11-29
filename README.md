@@ -6,6 +6,17 @@ Autores:
 - [Emilio García Muñoz](https://github.com/Emilsito)
 - [Sergio Llorente Gonzalez](https://github.com/CaulShiverss)
 
+## Índice
+
+1. [Sistema de información](#sistema-de-información)
+2. [Modelo entidad relación](#modelo-entidad-relación)
+3. [Decisiones](#decisiones)
+4. [Modelo Relacional](#modelo-relacional)
+5. [Diccionario de Datos](#diccionario-de-datos)
+6. [Tablas Modelo Físico](#tablas-modelo-fisico)
+7. [Registros Modelo Fisico](#registros-modelo-fisico)
+
+
 ## Sistema de información
 
 Una tienda de videojuegos vende merchandising, consolas y videojuegos. De estos productos se debe almacenar el precio, número de existencias y nombre. De los videojuegos se quiere saber la fecha de lanzamiento y de el merchandising el tipo y el tamaño. Hay que almacenar tambíen que consolas han sustituido a otras consolas.
@@ -340,6 +351,14 @@ Restricción de modificación: propagar.
 ## Imagen del modelo relacional:
 
 ![image](https://github.com/user-attachments/assets/4bf9a296-515a-46fb-9a74-6e2e6ebbc34f)
+
+## Tablas Modelo Fisico
+
+[Script para crear tablas](https://github.com/Proyecto1K2024Grupo3/Proyecto_IntMod/blob/main/DB_IntMod.sql)
+
+## Registros Modelo Fisico
+
+[Script para crear registros](https://github.com/Proyecto1K2024Grupo3/Proyecto_IntMod/blob/main/Registros_IntMod.sql)
 
 
 
