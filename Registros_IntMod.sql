@@ -5,10 +5,10 @@ INSERT INTO EMPLEADO (dni, telefono, f_Nacimiento, nombre) VALUES
 ('34567890C', '600345678', '1992-09-10', 'Carlos García'),
 ('45678901D', '600456789', '1980-03-25', 'María Fernández'),
 ('56789012E', '600567890', '1995-07-12', 'Pedro Sánchez'),
-('67890123F', '600678901', '1988-11-05', 'Laura Martínez'),
-('78901234G', '600789012', '1982-02-20', 'Luis Gómez'),
+('67890123F', '600678901', '1988-11-05', 'Mariano Rajoy'),
+('78901234G', '600789012', '1982-02-20', 'El Pepe'),
 ('89012345H', '600890123', '1993-06-18', 'Marta Ruiz'),
-('90123456I', '600901234', '1991-12-08', 'Javier Torres'),
+('90123456I', '600901234', '1991-12-08', 'Patrick Bateman'),
 ('01234567J', '600012345', '1987-08-30', 'Clara Moreno');
 
 -- Registros CLIENTE
@@ -48,18 +48,44 @@ INSERT INTO JUGAR (cod_partida, cod_cliente, ganador) VALUES
 (2, 4, 'María'), (3, 5, 'Pedro'), (4, 6, 'Laura'), 
 (5, 7, 'Luis'), (6, 8, 'Marta'), (7, 9, 'Javier'), (8, 10, 'Clara');
 
--- Registros PRODUCTO
-INSERT INTO PRODUCTO (cod_producto, precio, unidades, nombre) VALUES
-(1, 299, 10, 'PlayStation 5'),
-(2, 199, 15, 'Nintendo Switch Lite'),
-(3, 49, 50, 'The Legend of Zelda: Tears of the Kingdom'),
-(4, 39, 20, 'Minecraft'),
-(5, 59, 30, 'Elden Ring'),
-(6, 499, 5, 'Xbox Series X'),
-(7, 59, 25, 'Call of Duty: Modern Warfare II'),
-(8, 29, 40, 'Among Us Plush'),
-(9, 19, 60, 'Fortnite V-Bucks Pack'),
-(10, 79, 35, 'Razer Kraken Headset');
+-- Registros PRODUCTO (Contiene los registros de sus 3 hijos)
+INSERT INTO PRODUCTO (precio, unidades, nombre) VALUES
+-- Consolas (10 registros)
+(500.00, 20, 'PlayStation 5'),
+(300.00, 15, 'Xbox Series S'),
+(550.00, 10, 'Xbox Series X'),
+(400.00, 25, 'Nintendo Switch OLED'),
+(350.00, 30, 'Nintendo Switch Lite'),
+(450.00, 20, 'Steam Deck'),
+(200.00, 50, 'PlayStation 4 Slim'),
+(250.00, 40, 'Xbox One X'),
+(100.00, 60, 'Nintendo 2DS XL'),
+(150.00, 35, 'PlayStation 3 Super Slim'),
+
+-- Videojuegos (10 registros)
+(70.00, 100, 'The Legend of Zelda: Tears of the Kingdom'),
+(60.00, 200, 'Elden Ring'),
+(50.00, 150, 'FIFA 24'),
+(60.00, 120, 'Call of Duty: Modern Warfare III'),
+(40.00, 300, 'Minecraft'),
+(50.00, 250, 'Hogwarts Legacy'),
+(30.00, 500, 'Among Us'),
+(20.00, 600, 'Stardew Valley'),
+(60.00, 100, 'Final Fantasy XVI'),
+(50.00, 150, 'Super Mario Odyssey'),
+
+-- Merchandising (10 registros)
+(25.00, 100, 'Figura Funko Pop Mario'),
+(20.00, 150, 'Camiseta Zelda'),
+(30.00, 120, 'Taza PlayStation'),
+(15.00, 200, 'Poster Elden Ring'),
+(50.00, 80, 'Estatua de Link'),
+(10.00, 300, 'Llaveros de videojuegos'),
+(35.00, 90, 'Mochila Call of Duty'),
+(20.00, 250, 'Gorra Minecraft'),
+(60.00, 50, 'Edición coleccionista Amiibo'),
+(40.00, 110, 'Póster Final Fantasy');
+
 
 -- Registros CONSOLA
 INSERT INTO CONSOLA (cod_producto) VALUES
@@ -67,38 +93,30 @@ INSERT INTO CONSOLA (cod_producto) VALUES
 
 -- Registros SUSTITUIR
 INSERT INTO SUSTITUIR (cod_producto1, cod_producto2) VALUES
-(1, 6), -- PlayStation 5 sustituida por Xbox Series X
-(2, 4), -- Nintendo Switch Lite sustituida por Minecraft
-(3, 5), -- The Legend of Zelda sustituida por Elden Ring
-(8, 9), -- Among Us Plush sustituida por Fortnite V-Bucks Pack
-(10, 7), -- Razer Kraken Headset sustituida por Call of Duty
-(6, 1), -- Xbox Series X sustituida por PlayStation 5
-(4, 2), -- Minecraft sustituida por Nintendo Switch Lite
-(5, 3), -- Elden Ring sustituida por The Legend of Zelda
-(9, 8), -- Fortnite V-Bucks Pack sustituida por Among Us Plush
-(7, 10); -- Call of Duty sustituida por Razer Kraken Headset
+(1, 10), (7, 4), (1, 5), (4, 6), (9, 3), (8, 4),
+(7, 3), (7, 2), (1, 7), (4, 5);
 
 -- Registros VIDEOJUEGO
 INSERT INTO VIDEOJUEGO (cod_producto, tipo, tamaño) VALUES
-(1, 'Acción', 5000), (2, 'Aventura', 4000), (3, 'Estrategia', 3000),
-(4, 'RPG', 6000), (5, 'Simulación', 4500), (6, 'Shooter', 5500),
-(7, 'Deportes', 3200), (8, 'Carreras', 4800), (9, 'Puzzle', 2000),
-(10, 'Terror', 3600);
+(11, 'Acción', 5000), (12, 'Aventura', 4000), (13, 'Estrategia', 3000),
+(14, 'RPG', 6000), (15, 'Simulación', 4500), (16, 'Shooter', 5500),
+(17, 'Deportes', 3200), (18, 'Carreras', 4800), (19, 'Puzzle', 2000),
+(20, 'Terror', 3600);
 
 -- Registros MERCHANDISING
 INSERT INTO MERCHANDISING (cod_producto, f_lanzamiento) VALUES
-(1, '2022-01-01'), (2, '2022-02-01'), (3, '2022-03-01'),
-(4, '2022-04-01'), (5, '2022-05-01'), (6, '2022-06-01'),
-(7, '2022-07-01'), (8, '2022-08-01'), (9, '2022-09-01'),
-(10, '2022-10-01');
+(21, '2022-01-01'), (22, '2022-02-01'), (23, '2022-03-01'),
+(24, '2022-04-01'), (25, '2022-05-01'), (26, '2022-06-01'),
+(27, '2022-07-01'), (28, '2022-08-01'), (29, '2022-09-01'),
+(30, '2022-10-01');
 
 -- Registros COMPRAR
 INSERT INTO COMPRAR (cod_cliente, cod_producto, promocion, fecha) VALUES
-(1, 1, '10% OFF', '2023-01-01'), (2, 2, '15% OFF', '2023-02-01'),
-(3, 3, '20% OFF', '2023-03-01'), (4, 4, '25% OFF', '2023-04-01'),
+(1, 12, null, '2023-01-01'), (2, 2, null, '2023-02-01'),
+(3, 20, '20% OFF', '2023-03-01'), (4, 11, '25% OFF', '2023-04-01'),
 (5, 5, '30% OFF', '2023-05-01'), (6, 6, '35% OFF', '2023-06-01'),
-(7, 7, '40% OFF', '2023-07-01'), (8, 8, '45% OFF', '2023-08-01'),
-(9, 9, '50% OFF', '2023-09-01'), (10, 10, '55% OFF', '2023-10-01');
+(7, 23, null, '2023-07-01'), (8, 8, null, '2023-08-01'),
+(9, 9, '50% OFF', '2023-09-01'), (10, 18, '55% OFF', '2023-10-01');
 
 -- Registros COLABORADOR
 INSERT INTO COLABORADOR (n_usuario, nombre) VALUES
@@ -118,12 +136,12 @@ INSERT INTO PROMOCIONAR (cod_producto, usuarioColaborador) VALUES
 (1, 'carlohernandez'),
 (2, 'anamartinez'),
 (3, 'pedro_torres'),
-(4, 'luciagarcia'),
-(5, 'davidgutierrez'),
+(3, 'luciagarcia'),
+(3, 'davidgutierrez'),
 (6, 'sofia_lopez'),
-(7, 'javierjimenez'),
+(7, 'sofia_lopez'),
 (8, 'martasanchez'),
-(9, 'andres_perez'),
+(7, 'andres_perez'),
 (10, 'laurafdez');
 
 -- Registros PROVEEDOR
@@ -141,13 +159,14 @@ INSERT INTO PROVEEDOR (nif, nombre, direccion) VALUES
 
 -- Registros PROVEER
 INSERT INTO PROVEER (cod_producto, nif_proveedor) VALUES
-(1, '123A'), -- PlayStation 5 por Sony
-(2, '234B'), -- Nintendo Switch Lite por Nintendo
-(3, '234B'), -- Zelda también por Nintendo
-(4, '456D'), -- Minecraft por Bandai Namco
-(5, '345C'), -- Elden Ring por Microsoft
-(6, '345C'), -- Xbox Series X por Microsoft
-(7, '901I'), -- Call of Duty por Bethesda Softworks
-(8, '789G'), -- Among Us Plush por Razer
-(9, '678F'), -- Fortnite V-Bucks Pack por Epic Games
-(10, '789G'); -- Razer Kraken Headset por Razer
+(1, '123A'),
+(2, '234B'),
+(3, '234B'),
+(12, '456D'),
+(5, '345C'),
+(22, '345C'),
+(7, '901I'),
+(18, '789G'),
+(9, '678F'),
+(10, '789G'),
+(1, '789G');
