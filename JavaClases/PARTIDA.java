@@ -1,51 +1,49 @@
-
-import java.io.*;
-import java.util.*;
+package JavaClases;
 
 /**
  * 
  */
-public class PRODUCTO {
+public class PARTIDA {
 
     /**
      * Default constructor
      */
-    public PRODUCTO() {
+    public PARTIDA() {
     }
 
     /**
      * 
      */
-    private int precio;
+    private int cod_partida;
 
     /**
      * 
      */
-    private int unidades;
+    private int inicio;
 
     /**
      * 
      */
-    private String nombre;
+    private int direccion;
 
     /**
      * 
      */
-    public void crearProducto() {
+    public void crearPartida() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void borrarProducto() {
+    public void borrarPartida() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void actualizarProducto() {
+    public void ActualizarPartida() {
         // TODO implement here
     }
 
