@@ -37,3 +37,29 @@ FROM EMPLEADO e LEFT JOIN ATENDER a ON e.cod_empleado = a.cod_empleado
 LEFT JOIN CLIENTE c ON a.cod_cliente = c.cod_cliente
 GROUP BY e.cod_empleado, e.nombre;
 
+-- Muestra el nombre de los empleados que han atendido a clientes que han comprado el Elden Ring
+
+select e.nombre 
+from EMPLEADO e
+    join ATENDER a on e.cod_empleado = a.cod_empleado
+    join CLIENTE c on a.cod_cliente = c.cod_cliente
+    join COMPRAR co on co.cod_cliente = c.cod_cliente
+    join PRODUCTO p on co.cod_producto = p.cod_producto
+where p.nombre = "Elden Ring";
+
+-- Muestra el nombre de los colaboradores que hayan promocionado productos de más de 200 euros
+
+select distinct(c.nombre)
+from COLABORADOR c 
+    join PROMOCIONAR pr on c.n_usuario = pr.usuarioColaborador
+    join PRODUCTO p on pr.cod_producto = p.cod_producto
+where p.precio > 200;
+
+-- Muestra el numero de sala y la duracion de las partida que hayan jugado los clientes cuyos nombres empiezan por L
+
+select s.n_sala, case when fin < inicio then TIMEDIFF(ADDTIME(fin, '24:00:00'), inicio) else TIMEDIFF(fin, inicio) end as duracion
+from SALA s 
+    join PARTIDA p on p.n_sala = s.n_sala
+    join JUGAR j on p.cod_partida = j.cod_partida
+    join CLIENTE c on j.cod_cliente = c.cod_cliente
+where c.nombre like "L%";
