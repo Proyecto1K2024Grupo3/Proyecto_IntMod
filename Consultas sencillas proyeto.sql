@@ -1,3 +1,5 @@
+-- Autores: Emilio Garcia, Sergio Llorente, Pablo Morillas
+
 -- Queremos saber el número de empleados de la tienda
 
 select count(*) from empleado;
