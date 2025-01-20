@@ -35,7 +35,24 @@ from SALA s
     left join PARTIDA p on s.n_sala = p.n_sala
 group by s.n_sala;
 
+-- Vista llamada productosPocoStock que muestre los productos con 20 o menos unidades
+
+create view productosPocoStock as
+select * from PRODUCTO
+where unidades <= 20;
+
+-- Vista llamada comprasConPromocion en la que se muestren las compras que se han realizado con promociones
+
+create view comprasConPromocion as
+select * from COMPRAR
+where promocion is null;
 
 
+-- Mostrar el nombre del cliente, sus compras totales y el ranking de clientes por cantidad de compras.
 
-
+SELECT c.nombre AS nombre_cliente,
+    COUNT(co.cod_producto) AS total_compras,
+    RANK() OVER (ORDER BY COUNT(co.cod_producto) DESC) AS ranking
+FROM CLIENTE c
+    JOIN COMPRAR co ON c.cod_cliente = co.cod_cliente
+GROUP BY c.cod_cliente;
