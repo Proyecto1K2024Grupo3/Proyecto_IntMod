@@ -64,7 +64,7 @@ FROM CLIENTE c
 JOIN COMPRAR co ON c.cod_cliente = co.cod_cliente
 WHERE co.promocion IS NOT NULL
 GROUP BY c.nombre, co.promocion
-ORDER BY total_compras DESC;
+ORDER BY COUNT(co.cod_producto) DESC;
 
 
 -- Mostrar los proveedores que suministren las consolas más caras.
@@ -75,4 +75,4 @@ JOIN PROVEER pv ON pr.nif = pv.nif_proveedor
 JOIN CONSOLA c ON pv.cod_producto = c.cod_producto
 JOIN PRODUCTO p ON c.cod_producto = p.cod_producto
 GROUP BY pr.nombre
-ORDER BY precio_mas_alto DESC;
+ORDER BY MAX(p.precio) DESC;
