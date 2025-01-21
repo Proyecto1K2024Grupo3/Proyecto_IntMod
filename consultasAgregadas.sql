@@ -56,3 +56,23 @@ SELECT c.nombre AS nombre_cliente,
 FROM CLIENTE c
     JOIN COMPRAR co ON c.cod_cliente = co.cod_cliente
 GROUP BY c.cod_cliente;
+
+-- Mostrar los clientes que  hayan comprado productos con promociones.
+
+SELECT c.nombre AS cliente, COUNT(co.cod_producto) AS total_compras, co.promocion
+FROM CLIENTE c
+JOIN COMPRAR co ON c.cod_cliente = co.cod_cliente
+WHERE co.promocion IS NOT NULL
+GROUP BY c.nombre, co.promocion
+ORDER BY total_compras DESC;
+
+
+-- Mostrar los proveedores que suministren las consolas más caras.
+
+SELECT pr.nombre AS proveedor, MAX(p.precio) AS precio_mas_alto
+FROM PROVEEDOR pr
+JOIN PROVEER pv ON pr.nif = pv.nif_proveedor
+JOIN CONSOLA c ON pv.cod_producto = c.cod_producto
+JOIN PRODUCTO p ON c.cod_producto = p.cod_producto
+GROUP BY pr.nombre
+ORDER BY precio_mas_alto DESC;
