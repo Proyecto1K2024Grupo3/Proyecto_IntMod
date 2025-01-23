@@ -3,15 +3,31 @@ package JavaClases;
 /**
  * 
  */
-public class COLABORADOR {
+public class Colaborador {
     private String n_usuario;
     private String nombre;
 
     /**
      * Default constructor
      */
-    public COLABORADOR(String n_usuario, String nombre) {
+    public Colaborador(String n_usuario, String nombre) {
         this.n_usuario = n_usuario;
+        this.nombre = nombre;
+    }
+
+    public String getN_usuario() {
+        return n_usuario;
+    }
+
+    public void setN_usuario(String n_usuario) {
+        this.n_usuario = n_usuario;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 

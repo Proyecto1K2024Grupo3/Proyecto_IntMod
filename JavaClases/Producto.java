@@ -3,7 +3,7 @@ package JavaClases;
 /**
  * 
  */
-public class PRODUCTO {
+public class Producto {
     private int precio;
     private int unidades;
     private String nombre;
@@ -12,9 +12,33 @@ public class PRODUCTO {
     /**
      * Default constructor
      */
-    public PRODUCTO(String nombre, int precio, int unidades) {
+    public Producto(String nombre, int precio, int unidades) {
         this.nombre = nombre;
         this.precio = precio;
+        this.unidades = unidades;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public int getUnidades() {
+        return unidades;
+    }
+
+    public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
 
