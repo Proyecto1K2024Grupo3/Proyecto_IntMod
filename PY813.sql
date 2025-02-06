@@ -1,5 +1,45 @@
--- 5 Subconsultas (Emilio Putero)
+-- 5 Subconsultas (Emilio)
+--Obtener el nombre del empleado más joven.
+SELECT nombre 
+FROM EMPLEADO 
+WHERE f_Nacimiento = (SELECT MAX(f_Nacimiento) FROM EMPLEADO);
 
+--Obtener el nombre y teléfono del cliente que ha jugado más partidas.
+SELECT nombre, telefono
+FROM CLIENTE
+WHERE cod_cliente = (
+    SELECT cod_cliente 
+    FROM JUGAR 
+    GROUP BY cod_cliente 
+    ORDER BY COUNT(*) DESC 
+    LIMIT 1
+);
+
+--Listar los productos que tienen un precio mayor que el precio medio de todos los productos.
+
+SELECT nombre, precio
+FROM PRODUCTO
+WHERE precio > (SELECT AVG(precio) FROM PRODUCTO);
+
+--Obtener el número de partidas jugadas por cada cliente.
+
+SELECT c.nombre, p.total_partidas
+FROM CLIENTE c
+JOIN (
+    SELECT cod_cliente, COUNT(*) AS total_partidas
+    FROM JUGAR
+    GROUP BY cod_cliente
+) p ON c.cod_cliente = p.cod_cliente;
+
+--Mostrar los empleados que han atendido al menos a un cliente.
+
+SELECT nombre
+FROM EMPLEADO e
+WHERE EXISTS (
+    SELECT 1 
+    FROM ATENDER a 
+    WHERE a.cod_empleado = e.cod_empleado
+);
 
 
 -- 2 Consultas con CTE (Sergio)
