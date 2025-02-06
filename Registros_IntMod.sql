@@ -1,3 +1,4 @@
+
 -- Registros EMPLEADO
 INSERT INTO EMPLEADO (dni, telefono, f_Nacimiento, nombre) VALUES
 ('12345678A', '600123456', '1990-01-01', 'Juan Pérez'),
@@ -9,7 +10,7 @@ INSERT INTO EMPLEADO (dni, telefono, f_Nacimiento, nombre) VALUES
 ('78901234G', '600789012', '1982-02-20', 'El Pepe'),
 ('89012345H', '600890123', '1993-06-18', 'Marta Ruiz'),
 ('90123456I', '600901234', '1991-12-08', 'Patrick Bateman'),
-('01234567J', '600012345', '1987-08-30', 'Clara Moreno')
+('01234567J', '600012345', '1987-08-30', 'Clara Moreno'),
 ('11223344K', '601123456', '1994-04-10', 'Santiago Giménez'),
 ('22334455L', '601234567', '1986-07-22', 'Lucía Torres'),
 ('33445566M', '601345678', '1990-12-05', 'Fernando Alonso'),
