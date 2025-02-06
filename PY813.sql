@@ -73,6 +73,11 @@ where c.cod_empleado in (select * from empleados2clientes);
 
 -- Creación de Tabla Mediante Consulta Compleja (Sergio)
 
+create table productosSinCompra100 as
+select p.* from PRODUCTO p
+    left join COMPRAR c on c.cod_producto = p.cod_producto
+where c.cod_producto is null and p.precio > (select avg(precio) from PRODUCTO);
+
 -- 2 Indices que optimicen las consultas definidas (Pablo)
 
 CREATE INDEX empleadoFeNac ON `EMPLEADO`(f_Nacimiento);
