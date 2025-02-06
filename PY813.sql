@@ -44,17 +44,32 @@ WHERE EXISTS (
 
 -- 2 Consultas con CTE (Sergio)
 
--- Seleccionar los productos que cuesten más de 200 euros con más de 50 unidades y que hayan sido comprados por un cliente con un numero de telefono que empiece por 692
+-- Seleccionar los productos que cuesten más de 200 euros con más de 50 unidades y que hayan sido comprados por un cliente con un numero de telefono que empiece por 620
 
 with productos50unidades100euros as (
-    select cod_producto from producto
-    where precio > 200 and unidades > 50;
+    select cod_producto from PRODUCTO
+    where precio > 200 and unidades > 50
 )
 
 select p.* from PRODUCTO p
-join productos50unidades100euros pp on pp.cod_producto = p.cod_producto
-join COMPRAR c on c.cod_producto = p.cod_producto
-join CLIENTE cli on cli.cod_cliente = c.cod_cliente
+    join productos50unidades100euros pp on pp.cod_producto = p.cod_producto
+    join COMPRAR c on c.cod_producto = p.cod_producto
+    join CLIENTE cli on cli.cod_cliente = c.cod_cliente
+where cli.telefono like "620%";
+
+-- Seleccionar el nombre de los clientes que hayan sido atendidos por empleados con más de 2 clientes atendidos.
+
+with empleados2clientes (
+    select e.cod_empleado from EMPLEADO e
+    join ATENDER a on e.cod_empleado = a.cod_empleado
+    group by e.cod_empleado
+    having (count(cod_cliente) >= 2);
+)
+
+select c.nombre from CLIENTE c
+    join ATENDER a on a.cod_cliente = c.cod_cliente
+where c.cod_empleado in (select * from empleados2clientes);
+
 
 -- Creación de Tabla Mediante Consulta Compleja (Sergio)
 
