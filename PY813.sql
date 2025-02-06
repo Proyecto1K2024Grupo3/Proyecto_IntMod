@@ -60,5 +60,24 @@ join CLIENTE cli on cli.cod_cliente = c.cod_cliente
 
 -- 2 Indices que optimicen las consultas definidas (Pablo)
 
+CREATE INDEX empleadoFeNac ON `EMPLEADO`(f_Nacimiento);
+
+CREATE INDEX precioProducto ON `PRODUCTO`(precio);
+
 -- Planes de ejecucion antes y despues de los indices (Pablo)
 
+-- Obtener el nombre del empleado más joven:
+-- Antes de la optimización: 2ms
+-- Después de la optimización: 1ms
+
+EXPLAIN SELECT nombre 
+FROM EMPLEADO 
+WHERE f_Nacimiento = (SELECT MAX(f_Nacimiento) FROM EMPLEADO);
+
+-- Listar los productos que tienen un precio mayor que el precio medio de todos los productos:
+-- Antes de la optimización: 1ms
+-- Después de la optimización: 1ms
+
+EXPLAIN SELECT nombre, precio
+FROM PRODUCTO
+WHERE precio > (SELECT AVG(precio) FROM PRODUCTO);
