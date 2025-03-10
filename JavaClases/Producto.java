@@ -7,15 +7,19 @@ public class Producto {
     private int precio;
     private int unidades;
     private String nombre;
+    private Proveedor provedor;
+    private Empleado empleadoRegistro;
 
 
     /**
      * Default constructor
      */
-    public Producto(String nombre, int precio, int unidades) {
+    public Producto(String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleadoRegistro) {
         this.nombre = nombre;
         this.precio = precio;
         this.unidades = unidades;
+        this.provedor = proveedor;
+        this.empleadoRegistro = empleadoRegistro;
     }
 
     public String getNombre() {

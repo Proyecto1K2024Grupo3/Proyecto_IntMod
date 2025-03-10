@@ -1,11 +1,15 @@
 package JavaClases;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 
  */
 public class Colaborador {
     private String n_usuario;
     private String nombre;
+    private List<Producto> productos;
 
     /**
      * Default constructor
@@ -13,6 +17,7 @@ public class Colaborador {
     public Colaborador(String n_usuario, String nombre) {
         this.n_usuario = n_usuario;
         this.nombre = nombre;
+        this.productos = new ArrayList<>();
     }
 
     public String getN_usuario() {

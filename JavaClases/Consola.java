@@ -1,8 +1,6 @@
-package clases;
+package JavaClases;
 
-/**
- *
- */
+
 public class Consola extends Producto {
 
     private Consola consolaReemplazar;
@@ -18,12 +16,12 @@ public class Consola extends Producto {
      * @param precio
      * @param unidades
      */
-    public Consola(String nombre, int precio, int unidades) {
-        super(nombre, precio, unidades);
+    public Consola(String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleado) {
+        super(nombre, precio, unidades, proveedor, empleado);
     }
 
-    public Consola(String nombre, int precio, int unidades, Consola consolaReemplazar) {
-        super(nombre, precio, unidades);
+    public Consola(String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleado, Consola consolaReemplazar) {
+        super(nombre, precio, unidades, proveedor, empleado);
         this.consolaReemplazar = consolaReemplazar;
     }
 

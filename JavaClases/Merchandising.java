@@ -1,4 +1,6 @@
-package clases;
+package JavaClases;
+
+import JavaClases.Proveedor;
 
 public class Merchandising extends Producto {
 
@@ -16,8 +18,8 @@ public class Merchandising extends Producto {
      * @param precio
      * @param unidades
      */
-    public Merchandising(String nombre, int precio, int unidades, String tipo, double tamanyo) {
-        super(nombre, precio, unidades);
+    public Merchandising(String nombre, int precio, int unidades, String tipo, double tamanyo, Proveedor proveedor, Empleado empleado) {
+        super(nombre, precio, unidades, proveedor, empleado);
         this.tipo = tipo;
         this.tamanyo = tamanyo;
     }

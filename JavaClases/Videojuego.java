@@ -1,4 +1,4 @@
-package clases;
+package JavaClases;
 
 /**
  *
@@ -23,8 +23,8 @@ public class Videojuego extends Producto {
      * @param unidades
      */
 
-        public Videojuego(String nombre, int precio, int unidades, String f_lanzamiento) {
-        super(nombre, precio, unidades);
+        public Videojuego(String nombre, int precio, int unidades, String f_lanzamiento, Proveedor proveedor, Empleado empleado) {
+        super(nombre, precio, unidades, proveedor, empleado);
         this.f_lanzamiento = f_lanzamiento;
     }
 

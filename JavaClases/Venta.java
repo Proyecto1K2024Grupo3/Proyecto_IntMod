@@ -1,24 +1,38 @@
 package JavaClases;
 
+import java.time.LocalDate;
+import java.util.List;
+
 /**
  * Clase que representa una venta.
  */
 public class Venta {
     private int idVenta;
-    private String fecha;
+    private Cliente comprador;
+    private List<LineaVenta> lineasVenta;
+    private LocalDate fecha;
     private double total;
     private String metodoPago;
 
     /**
-     * Constructor por defecto.
+     * Constructor de la clase Venta.
+     * @param idVenta Identificador de la venta.
+     * @param comprador Cliente que realiza la compra.
+     * @param lineasVenta Lista de líneas de venta.
+     * @param fecha Fecha de la venta.
+     * @param total Precio total de la venta.
+     * @param metodoPago Método de pago utilizado.
      */
-    public Venta(int idVenta, String fecha, double total, String metodoPago) {
+    public Venta(int idVenta, Cliente comprador, List<LineaVenta> lineasVenta, LocalDate fecha, double total, String metodoPago) {
         this.idVenta = idVenta;
+        this.comprador = comprador;
+        this.lineasVenta = lineasVenta;
         this.fecha = fecha;
         this.total = total;
         this.metodoPago = metodoPago;
     }
 
+    // Getters y Setters
     public int getIdVenta() {
         return idVenta;
     }
@@ -27,11 +41,27 @@ public class Venta {
         this.idVenta = idVenta;
     }
 
-    public String getFecha() {
+    public Cliente getComprador() {
+        return comprador;
+    }
+
+    public void setComprador(Cliente comprador) {
+        this.comprador = comprador;
+    }
+
+    public List<LineaVenta> getLineasVenta() {
+        return lineasVenta;
+    }
+
+    public void setLineasVenta(List<LineaVenta> lineasVenta) {
+        this.lineasVenta = lineasVenta;
+    }
+
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
@@ -51,46 +81,43 @@ public class Venta {
         this.metodoPago = metodoPago;
     }
 
+    // Métodos para exportar a JSON y XML
     public String toJson() {
-        StringBuilder jsonBuilder = new StringBuilder();
-        jsonBuilder.append("{\n")
-                .append("    \"idVenta\": ").append(idVenta).append(",\n")
-                .append("    \"fecha\": \"").append(fecha).append("\",\n")
-                .append("    \"total\": ").append(total).append(",\n")
-                .append("    \"metodoPago\": \"").append(metodoPago).append("\"\n")
-                .append("}");
-        return jsonBuilder.toString();
+        return "{" +
+                "\"idVenta\": " + idVenta + ", " +
+                "\"fecha\": \"" + fecha + "\", " +
+                "\"total\": " + total + ", " +
+                "\"metodoPago\": \"" + metodoPago + "\"" +
+                "}";
     }
 
     public String toXML() {
-        StringBuilder xmlBuilder = new StringBuilder();
-        xmlBuilder.append("<Venta>\n")
-                .append("    <idVenta>").append(idVenta).append("</idVenta>\n")
-                .append("    <fecha>").append(fecha).append("</fecha>\n")
-                .append("    <total>").append(total).append("</total>\n")
-                .append("    <metodoPago>").append(metodoPago).append("</metodoPago>\n")
-                .append("</Venta>");
-        return xmlBuilder.toString();
+        return "<Venta>" +
+                "<idVenta>" + idVenta + "</idVenta>" +
+                "<fecha>" + fecha + "</fecha>" +
+                "<total>" + total + "</total>" +
+                "<metodoPago>" + metodoPago + "</metodoPago>" +
+                "</Venta>";
     }
 
     /**
      * Método para crear una venta.
      */
     public void crearVenta() {
-        // TODO implement here
+        // Implementación futura
     }
 
     /**
      * Método para borrar una venta.
      */
     public void borrarVenta() {
-        // TODO implement here
+        // Implementación futura
     }
 
     /**
      * Método para actualizar una venta.
      */
     public void actualizarVenta() {
-        // TODO implement here
+        // Implementación futura
     }
 }
