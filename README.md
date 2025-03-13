@@ -8,10 +8,10 @@ Autores:
 
 ## Índice
 
-1. [Sistema de información](#sistema-de-información)
-2. [Modelo entidad relación](#modelo-entidad-relación)
+1. [Sistema de información](/Documentacion/SistemaInformacion.md)
+2. [Modelo entidad relación](/Documentacion/ModeloEntidadRelacion.md)
 3. [Decisiones](#decisiones)
-4. [Modelo Relacional](#modelo-relacional)
+4. [Modelo Relacional](/Documentacion/ModeloRelacional.md)
 5. [Diccionario de Datos](#diccionario-de-datos)
 6. [Tablas Modelo Físico](#tablas-modelo-fisico)
 7. [Registros Modelo Fisico](#registros-modelo-fisico)
