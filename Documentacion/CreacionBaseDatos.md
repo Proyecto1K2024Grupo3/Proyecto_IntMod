@@ -1,14 +1,14 @@
 - # Tablas Modelo
 
-- [Indice Principal](/README.md)
+[Indice Principal](/README.md)
 
 ## Creacion de las tablas
 
-[Script para crear tablas](https://github.com/Proyecto1K2024Grupo3/Proyecto_IntMod/blob/main/DB_IntMod.sql)
+[Script para crear tablas](/Database/DB_IntMod.sql)
 
 ## Añadir los Datos
 
-[Script para crear registros](https://github.com/Proyecto1K2024Grupo3/Proyecto_IntMod/blob/main/Registros_IntMod.sql)
+[Script para crear registros](/Database/Registros_IntMod.sql)
 
 **Hemos usado el plugin colaborativo de Visual Studio Code que nos permite trabajar a todos a la vez.**
 
