@@ -3,4 +3,4 @@
 - [Indice Principal](/README.md)
 
 
-![imatge](/Diagramas/ModeloEntidadRelacion.png)
+![imatge](/Diagramas-Modelos/ModeloEntidadRelacion.png)

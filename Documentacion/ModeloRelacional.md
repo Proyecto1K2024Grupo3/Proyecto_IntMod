@@ -4,7 +4,7 @@
 
 ## Imagen
 
-![Imagen](/Diagramas/ModeloRelacional.png)
+![Imagen](/Diagramas-Modelos/ModeloRelacional.png)
 
 ---
 

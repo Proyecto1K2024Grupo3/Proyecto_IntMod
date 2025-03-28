@@ -15,3 +15,11 @@ Existe un inventario de productos el cual es llevado por empleados. Varios emple
 Los productos los suministran diferentes proveedores, un producto solo puede ser suministrado por un proveedor y un proveedor puede suministrar diferentes productos, de cada proveedor se desea conocer el NIF, nombre y direccion.
 
 La tienda colabora con influencers para promocionar sus productos, interesa registrar el nombre del influencer para identificarlo, su usuario en redes sociales y la tarifa por la colaboración con la tienda. Cada influencer puede promocionar varios productos y los producto pueden ser promocionados por varios influencers.
+
+## Decisiones
+
+En la tienda hay varias salas en las que se juegan partidas entre dos clientes. Queremos recoger estos datos para en caso de alguna incidencia poder identificar que dos clientes se encontraban en la sala. Y almacenamos el ganador de cada partida porque el que mas partidas gane al mes se lleva un premio.
+
+Queremos controlar el inventario de la tienda, por lo tanto almacenamos que empleados han organizado cada producto. Hemos decidido hacerlo de esta manera porque cada empleado se encargará de la integridad de sus productos. Un empleado se encargá de el merchandising, otro de las consolas... etc.
+
+Hemos decidido recoger la tarifa de cada promoción en el atributo porque es un precio que depende de la repercusion del colaborador. A Ibai no le pagariamos lo mismo que a Aitor Medrano.
