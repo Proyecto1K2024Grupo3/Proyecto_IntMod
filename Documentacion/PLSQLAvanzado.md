@@ -4,7 +4,7 @@
 
 ### Evento 1 (Sergio Llorente)
 
-- Tenienda la tabla:
+- Teniendo la tabla:
 
 ```sql 
 create or replace table logTotalProductos(
