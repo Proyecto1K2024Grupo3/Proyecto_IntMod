@@ -14,7 +14,7 @@ create or replace table logTotalProductos(
 );
 ```
 
-- Creamos un evento que registre el total de cantidad de productos que tiene la tienda diariamente.
+- Creamos un evento que registre el total de cantidad de productos que tiene la tienda diariamente:
 
 ```sql 
 delimiter //
