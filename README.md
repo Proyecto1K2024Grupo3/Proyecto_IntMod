@@ -24,6 +24,7 @@ Autores:
 6. [Consultas Simples](/Documentacion/ConsultasSimples.md)
 7. [Consultas Agregadas](/Documentacion/ConsultasAgregadas.md)
 8. [Subconsultas, CTEs e Indices](/Documentacion/Subconsultas.md)
+9. [PL/SQL Avanzado](/Documentacion/PLSQLAvanzado.md)
 
 ### Desarrollo en Java
 

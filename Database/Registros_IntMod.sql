@@ -53,7 +53,27 @@ INSERT INTO CLIENTE (cod_cliente, nombre, telefono) VALUES
 (7, 'Pedro Gómez', '660234567'),
 (8, 'Elena Torres', '670987321'),
 (9, 'Jorge Ruiz', '680654321'),
-(10, 'Lucía Morales', '690123789');
+(10, 'Lucía Morales', '690123789'),
+(11, 'Diego Herrera', '600234111'),
+(12, 'Natalia Castro', '610345222'),
+(13, 'Iván Ortega', '620456333'),
+(14, 'Clara Rivas', '630567444'),
+(15, 'Alberto Molina', '640678555'),
+(16, 'Carmen Vidal', '650789666'),
+(17, 'Manuel Núñez', '660890777'),
+(18, 'Patricia Reyes', '670901888'),
+(19, 'Raúl Iglesias', '680012999'),
+(20, 'Sofía Domínguez', '690123000'),
+(21, 'Adrián Cano', '600234101'),
+(22, 'Beatriz Méndez', '610345202'),
+(23, 'Daniel Fuentes', '620456303'),
+(24, 'Marta León', '630567404'),
+(25, 'Rubén Serrano', '640678505'),
+(26, 'Isabel Bravo', '650789606'),
+(27, 'Óscar Crespo', '660890707'),
+(28, 'Nuria Silva', '670901808'),
+(29, 'Andrés Pardo', '680012909'),
+(30, 'Julia Campos', '690123010');
 
 -- Registros ATENDER
 INSERT INTO ATENDER (cod_empleado, cod_cliente) VALUES
