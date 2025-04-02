@@ -1,4 +1,4 @@
-package JavaClases;
+package App.model;
 
 /**
  * Clase que representa una línea de venta.

@@ -1,4 +1,4 @@
-package JavaClases;
+package App.model;
 
 /**
  * Clase que representa un empleado.
@@ -6,14 +6,14 @@ package JavaClases;
 public class Empleado {
     private int codEmpleado;
     private String dni;
-    private int telefono;
+    private String telefono;
     private String fechaNacimiento;
     private String nombre;
 
     /**
      * Constructor por defecto.
      */
-    public Empleado(String dni, int codEmpleado, int telefono, String fechaNacimiento, String nombre) {
+    public Empleado(String dni, int codEmpleado, String telefono, String fechaNacimiento, String nombre) {
         this.dni = dni;
         this.codEmpleado = codEmpleado;
         this.telefono = telefono;
@@ -37,11 +37,11 @@ public class Empleado {
         this.dni = dni;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -97,5 +97,16 @@ public class Empleado {
      */
     public void borrarEmpleado() {
         // TODO implement here
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "codEmpleado=" + codEmpleado +
+                ", dni='" + dni + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }

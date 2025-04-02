@@ -1,4 +1,4 @@
-package JavaClases;
+package App.model;
 
 
 public class Consola extends Producto {

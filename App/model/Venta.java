@@ -1,4 +1,4 @@
-package JavaClases;
+package App.model;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -29,7 +29,7 @@ Autores:
 ### Desarrollo en Java
 
 9. [Diagrama de Clases](/Documentacion/DiagramaClases.md)
-10. [Clases de Java](JavaClases) 
+10. [Clases de Java](App) 
 
 
 

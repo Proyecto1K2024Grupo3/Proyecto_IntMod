@@ -1,4 +1,4 @@
-package clases;
+package App.model;
 
 public class Sala {
 

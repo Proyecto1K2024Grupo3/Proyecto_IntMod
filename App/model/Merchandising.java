@@ -1,6 +1,4 @@
-package JavaClases;
-
-import JavaClases.Proveedor;
+package App.model;
 
 public class Merchandising extends Producto {
 
