@@ -46,6 +46,22 @@ public class Producto {
         this.unidades = unidades;
     }
 
+    public Proveedor getProvedor() {
+        return provedor;
+    }
+
+    public void setProvedor(Proveedor provedor) {
+        this.provedor = provedor;
+    }
+
+    public Empleado getEmpleadoRegistro() {
+        return empleadoRegistro;
+    }
+
+    public void setEmpleadoRegistro(Empleado empleadoRegistro) {
+        this.empleadoRegistro = empleadoRegistro;
+    }
+
     public String toJson() {
         StringBuilder jsonBuilder = new StringBuilder();
         jsonBuilder.append("(\n")
