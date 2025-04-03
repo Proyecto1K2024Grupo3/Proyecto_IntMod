@@ -73,4 +73,13 @@ public class Cliente {
         // TODO implement here
     }
 
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "cod_cliente=" + cod_cliente +
+                ", dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

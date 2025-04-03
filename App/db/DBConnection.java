@@ -16,7 +16,7 @@ public class DBConnection {
     // Constructor privado para evitar instancias directas
     private DBConnection() {}
 
-    // Método estático para obtener la instancia única de la conexión
+    // Metodo estático para obtener la instancia única de la conexión
     public static Connection getConnection() {
         if (connection == null) {
             // Bloqueo sincronizado para evitar concurrencia
