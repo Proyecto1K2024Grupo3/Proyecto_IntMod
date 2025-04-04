@@ -5,6 +5,11 @@ public class Sala {
     private int n_sala;
     private int tamanyo;
 
+    public Sala(int n_sala, int tamanyo) {
+        this.n_sala = n_sala;
+        this.tamanyo = tamanyo;
+    }
+
     public String toJson() {
         StringBuilder jsonBuilder = new StringBuilder();
         jsonBuilder.append("(\n")
