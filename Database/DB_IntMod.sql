@@ -6,7 +6,7 @@ CREATE DATABASE ProyectoIntMod;
 USE ProyectoIntMod;
 
 -- [1] Tabla EMPLEADO 
-CREATE TABLE EMPLEADO(
+CREATE TABLE empleado(
     cod_empleado INT AUTO_INCREMENT,
     dni VARCHAR(32) UNIQUE KEY,
     telefono CHAR(9),
@@ -16,7 +16,7 @@ CREATE TABLE EMPLEADO(
 );
 
 -- [2] Tabla CLIENTE
-CREATE TABLE CLIENTE(
+CREATE TABLE cliente(
     cod_cliente INT AUTO_INCREMENT,
     dni VARCHAR(64),
     nombre VARCHAR(64),
@@ -24,7 +24,7 @@ CREATE TABLE CLIENTE(
 );
 
 -- [3] Tabla ATENDER [N:M]
-CREATE TABLE ATENDER(
+CREATE TABLE atender(
     cod_empleado INT,
     cod_cliente INT,
     CONSTRAINT PK_ATENDER PRIMARY KEY (cod_empleado, cod_cliente),
@@ -33,14 +33,14 @@ CREATE TABLE ATENDER(
 );
 
 -- [4] Tabla SALA
-CREATE TABLE SALA(
+CREATE TABLE sala(
     n_sala INT,
     tamanyo INT,
     CONSTRAINT PK_SALA PRIMARY KEY (n_sala)
 );
 
 -- [5] Tabla PARTIDA
-CREATE TABLE PARTIDA(
+CREATE TABLE partida(
     cod_partida INT UNSIGNED AUTO_INCREMENT,
     inicio TIME,
     direccion INT,
@@ -50,7 +50,7 @@ CREATE TABLE PARTIDA(
 );
 
 -- [6] Tabla JUGAR [N:M]
-CREATE TABLE JUGAR(
+CREATE TABLE jugar(
     cod_partida INT,
     cod_cliente INT,
     ganador VARCHAR(32),
@@ -60,7 +60,7 @@ CREATE TABLE JUGAR(
 );
 
 -- [7] Tabla PRODUCTO
-CREATE TABLE PRODUCTO(
+CREATE TABLE producto(
     cod_producto INT UNSIGNED AUTO_INCREMENT,
     precio DECIMAL(6,2),
     unidades INT,
@@ -69,14 +69,14 @@ CREATE TABLE PRODUCTO(
 );
 
 -- [8] Tabla CONSOLA
-CREATE TABLE CONSOLA(
+CREATE TABLE consola(
     cod_producto INT,
     CONSTRAINT PK_CONSOLA PRIMARY KEY (cod_producto),
     CONSTRAINT FK_CONSOLA FOREIGN KEY (cod_producto) REFERENCES PRODUCTO(cod_producto) ON UPDATE NO ACTION ON DELETE CASCADE
 );
 
 -- [9] Tabla SUSTIUR [N:M]
-CREATE TABLE SUSTITUIR(
+CREATE TABLE sustituir(
     cod_producto1 INT,
     cod_producto2 INT,
     CONSTRAINT PK_SUSTITUIR PRIMARY KEY (cod_producto1, cod_producto2),
@@ -85,7 +85,7 @@ CREATE TABLE SUSTITUIR(
 );
 
 -- [10] Tabla VIDEOJUEGO
-CREATE TABLE VIDEOJUEGO(
+CREATE TABLE videojuego(
     cod_producto INT,
     tipo VARCHAR(32),
     tamaño INT,
@@ -94,7 +94,7 @@ CREATE TABLE VIDEOJUEGO(
 );
 
 -- [11] Tabla MERCHANDISING
-CREATE TABLE MERCHANDISING(
+CREATE TABLE merchandising(
     cod_producto INT,
     tipo VARCHAR(64),
     tamanyo INT,
@@ -103,7 +103,7 @@ CREATE TABLE MERCHANDISING(
 );
 
 -- [12] Tabla COMPRAR [N:M]
-CREATE TABLE COMPRAR(
+CREATE TABLE comprar(
     cod_cliente INT,
     cod_producto INT,
     promocion VARCHAR(32),
@@ -114,23 +114,23 @@ CREATE TABLE COMPRAR(
 );
 
 -- [13] Tabla COLABORADOR
-CREATE TABLE COLABORADOR(
+CREATE TABLE colaborador(
     n_usuario VARCHAR(64),
     nombre VARCHAR(64),
     CONSTRAINT PK_COLABORADOR PRIMARY KEY (n_usuario)
 );
 
 -- [14] Tabla PROMOCIONAR [N:M]
-CREATE TABLE PROMOCIONAR (
+CREATE TABLE promocionar (
     cod_producto INT,
-    usuarioColaborador VARCHAR(64),
+    usuario_olaborador VARCHAR(64),
     CONSTRAINT PK_PROMOCIONAR PRIMARY KEY (cod_producto, usuarioColaborador),
     CONSTRAINT FK_PROMOCOINAR_PRODUCTO FOREIGN KEY (cod_producto) REFERENCES PRODUCTO(cod_producto) ON UPDATE NO ACTION ON DELETE CASCADE,
     CONSTRAINT FK_PROMOCIONAR_COLABORADOR FOREIGN KEY (usuarioColaborador) REFERENCES COLABORADOR(n_usuario) ON UPDATE NO ACTION ON DELETE CASCADE
 );
 
 -- [15] Tabla PROVEEDOR
-CREATE TABLE PROVEEDOR(
+CREATE TABLE proveedor(
     nif VARCHAR(32),
     nombre VARCHAR(64),
     direccion VARCHAR(64),
@@ -138,7 +138,7 @@ CREATE TABLE PROVEEDOR(
 );
 
 -- [16] Tabla PROVEER [N:M]
-CREATE TABLE PROVEER(
+CREATE TABLE proveer(
     cod_producto INT,
     nif_Proveedor VARCHAR(32),
     CONSTRAINT PK_PROVEER PRIMARY KEY (cod_producto, nif_Proveedor),
