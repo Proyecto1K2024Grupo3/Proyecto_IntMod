@@ -15,7 +15,7 @@ public class Cliente {
      * @param dni DNI del cliente.
      * @param nombre Nombre del cliente.
      */
-    public Cliente(int cod_cliente, String dni, String nombre) {
+    public Cliente(int cod_cliente, String nombre, String dni) {
         this.cod_cliente = cod_cliente;
         this.dni = dni;
         this.nombre = nombre;

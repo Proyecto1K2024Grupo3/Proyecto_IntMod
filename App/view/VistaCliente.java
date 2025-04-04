@@ -28,7 +28,7 @@ public class VistaCliente {
         System.out.println("Introduce el nombre: ");
         String nombre = scanner.nextLine();
 
-        return new Cliente(cod_cliente, dni, nombre);
+        return new Cliente(cod_cliente, nombre, dni);
     }
 
     public String obtenerDniAEliminar() {

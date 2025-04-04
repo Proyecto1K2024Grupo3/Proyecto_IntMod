@@ -4,7 +4,7 @@ import App.controller.ControllerCliente;
 
 import java.util.Scanner;
 
-public class mainCliente {
+public class MainCliente {
     public static void main(String[] args) {
         ControllerCliente controlador = new ControllerCliente();
         Scanner scanner = new Scanner(System.in);
