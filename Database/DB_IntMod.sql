@@ -41,7 +41,7 @@ CREATE TABLE sala(
 
 -- [5] Tabla PARTIDA
 CREATE TABLE partida(
-    cod_partida INT UNSIGNED AUTO_INCREMENT,
+    cod_partida INT AUTO_INCREMENT,
     inicio TIME,
     direccion INT,
     n_sala INT,
@@ -61,7 +61,7 @@ CREATE TABLE jugar(
 
 -- [7] Tabla PRODUCTO
 CREATE TABLE producto(
-    cod_producto INT UNSIGNED AUTO_INCREMENT,
+    cod_producto INT AUTO_INCREMENT,
     precio DECIMAL(6,2),
     unidades INT,
     nombre VARCHAR(64),
@@ -123,10 +123,10 @@ CREATE TABLE colaborador(
 -- [14] Tabla PROMOCIONAR [N:M]
 CREATE TABLE promocionar (
     cod_producto INT,
-    usuario_olaborador VARCHAR(64),
-    CONSTRAINT PK_PROMOCIONAR PRIMARY KEY (cod_producto, usuarioColaborador),
+    usuario_colaborador VARCHAR(64),
+    CONSTRAINT PK_PROMOCIONAR PRIMARY KEY (cod_producto, usuario_colaborador),
     CONSTRAINT FK_PROMOCOINAR_PRODUCTO FOREIGN KEY (cod_producto) REFERENCES producto(cod_producto) ON UPDATE NO ACTION ON DELETE CASCADE,
-    CONSTRAINT FK_PROMOCIONAR_COLABORADOR FOREIGN KEY (usuarioColaborador) REFERENCES colaborador(n_usuario) ON UPDATE NO ACTION ON DELETE CASCADE
+    CONSTRAINT FK_PROMOCIONAR_COLABORADOR FOREIGN KEY (usuario_colaborador) REFERENCES colaborador(n_usuario) ON UPDATE NO ACTION ON DELETE CASCADE
 );
 
 -- [15] Tabla PROVEEDOR
