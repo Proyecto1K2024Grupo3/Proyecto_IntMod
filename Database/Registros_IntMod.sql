@@ -1,6 +1,5 @@
-
 -- Registros EMPLEADO
-INSERT INTO EMPLEADO (dni, telefono, f_Nacimiento, nombre) VALUES
+INSERT INTO empleado (dni, telefono, f_Nacimiento, nombre) VALUES
 ('12345678A', '600123456', '1990-01-01', 'Juan Pérez'),
 ('23456789B', '600234567', '1985-05-15', 'Ana López'),
 ('34567890C', '600345678', '1992-09-10', 'Carlos García'),
@@ -43,50 +42,50 @@ INSERT INTO EMPLEADO (dni, telefono, f_Nacimiento, nombre) VALUES
 ('00112233N', '603012345', '1987-11-12', 'Carolina Herrera');
 
 -- Registros CLIENTE
-INSERT INTO CLIENTE (cod_cliente, nombre, telefono) VALUES
-(1, 'Carlos López', '600123456'),
-(2, 'María García', '610987654'),
-(3, 'Juan Pérez', '620345678'),
-(4, 'Ana Martínez', '630876543'),
-(5, 'Luis Fernández', '640456789'),
-(6, 'Laura Sánchez', '650789123'),
-(7, 'Pedro Gómez', '660234567'),
-(8, 'Elena Torres', '670987321'),
-(9, 'Jorge Ruiz', '680654321'),
-(10, 'Lucía Morales', '690123789'),
-(11, 'Diego Herrera', '600234111'),
-(12, 'Natalia Castro', '610345222'),
-(13, 'Iván Ortega', '620456333'),
-(14, 'Clara Rivas', '630567444'),
-(15, 'Alberto Molina', '640678555'),
-(16, 'Carmen Vidal', '650789666'),
-(17, 'Manuel Núñez', '660890777'),
-(18, 'Patricia Reyes', '670901888'),
-(19, 'Raúl Iglesias', '680012999'),
-(20, 'Sofía Domínguez', '690123000'),
-(21, 'Adrián Cano', '600234101'),
-(22, 'Beatriz Méndez', '610345202'),
-(23, 'Daniel Fuentes', '620456303'),
-(24, 'Marta León', '630567404'),
-(25, 'Rubén Serrano', '640678505'),
-(26, 'Isabel Bravo', '650789606'),
-(27, 'Óscar Crespo', '660890707'),
-(28, 'Nuria Silva', '670901808'),
-(29, 'Andrés Pardo', '680012909'),
-(30, 'Julia Campos', '690123010');
+INSERT INTO cliente (cod_cliente, nombre, dni) VALUES
+(1, 'Carlos López', '12345678A'),
+(2, 'María García', '23456789B'),
+(3, 'Juan Pérez', '34567890C'),
+(4, 'Ana Martínez', '45678901D'),
+(5, 'Luis Fernández', '56789012E'),
+(6, 'Laura Sánchez', '67890123F'),
+(7, 'Pedro Gómez', '78901234G'),
+(8, 'Elena Torres', '89012345H'),
+(9, 'Jorge Ruiz', '90123456I'),
+(10, 'Lucía Morales', '01234567J'),
+(11, 'Diego Herrera', '11223344K'),
+(12, 'Natalia Castro', '22334455L'),
+(13, 'Iván Ortega', '33445566M'),
+(14, 'Clara Rivas', '44556677N'),
+(15, 'Alberto Molina', '55667788O'),
+(16, 'Carmen Vidal', '66778899P'),
+(17, 'Manuel Núñez', '77889900Q'),
+(18, 'Patricia Reyes', '88990011R'),
+(19, 'Raúl Iglesias', '99001122S'),
+(20, 'Sofía Domínguez', '00112233T'),
+(21, 'Adrián Cano', '11223344U'),
+(22, 'Beatriz Méndez', '22334455V'),
+(23, 'Daniel Fuentes', '33445566W'),
+(24, 'Marta León', '44556677X'),
+(25, 'Rubén Serrano', '55667788Y'),
+(26, 'Isabel Bravo', '66778899Z'),
+(27, 'Óscar Crespo', '77889900A'),
+(28, 'Nuria Silva', '88990011B'),
+(29, 'Andrés Pardo', '99001122C'),
+(30, 'Julia Campos', '00112233D');
 
 -- Registros ATENDER
-INSERT INTO ATENDER (cod_empleado, cod_cliente) VALUES
+INSERT INTO atender (cod_empleado, cod_cliente) VALUES
 (1, 1), (1, 2), (2, 3), (2, 4), (3, 5),
 (4, 6), (4, 7), (5, 8), (6, 9), (6, 10);
 
 -- Registros SALA
-INSERT INTO SALA (n_sala, tamanyo) VALUES
+INSERT INTO sala (n_sala, tamanyo) VALUES
 (1, 20), (2, 15), (3, 25), (4, 30), (5, 18),
 (6, 22), (7, 28), (8, 35), (9, 12), (10, 40);
 
 -- Registros PARTIDA
-INSERT INTO PARTIDA (inicio, fin, n_sala) VALUES
+INSERT INTO partida (inicio, fin, n_sala) VALUES
 ('10:00:00', '11:00:00', 1), ('11:30:00', '12:30:00', 2), 
 ('13:00:00', '14:00:00', 3), ('14:30:00', '15:30:00', 4), 
 ('16:00:00', '17:00:00', 5), ('17:30:00', '18:30:00', 6), 
@@ -94,13 +93,13 @@ INSERT INTO PARTIDA (inicio, fin, n_sala) VALUES
 ('22:00:00', '23:00:00', 9), ('23:30:00', '00:30:00', 10);
 
 -- Registros JUGAR
-INSERT INTO JUGAR (cod_partida, cod_cliente, ganador) VALUES
+INSERT INTO jugar (cod_partida, cod_cliente, ganador) VALUES
 (1, 1, 'Juan'), (1, 2, 'Ana'), (2, 3, 'Carlos'), 
 (2, 4, 'María'), (3, 5, 'Pedro'), (4, 6, 'Laura'), 
 (5, 7, 'Luis'), (6, 8, 'Marta'), (7, 9, 'Javier'), (8, 10, 'Clara');
 
 -- Registros PRODUCTO (Contiene los registros de sus 3 hijos)
-INSERT INTO PRODUCTO (precio, unidades, nombre) VALUES
+INSERT INTO producto (precio, unidades, nombre) VALUES
 -- Consolas (10 registros)
 (500.00, 20, 'PlayStation 5'),
 (300.00, 15, 'Xbox Series S'),
@@ -172,18 +171,18 @@ INSERT INTO PRODUCTO (precio, unidades, nombre) VALUES
 
 
 -- Registros CONSOLA
-INSERT INTO CONSOLA (cod_producto) VALUES
+INSERT INTO consola (cod_producto) VALUES
 (1), (2), (3), (4), (5), (6), (7), (8), (9), (10),
 (31), (32), (33), (34), (35), (36), (37), (38), (39), (40);
 
 -- Registros SUSTITUIR
-INSERT INTO SUSTITUIR (cod_producto1, cod_producto2) VALUES
+INSERT INTO sustituir (cod_producto1, cod_producto2) VALUES
 (1, 10), (7, 4), (1, 5), (4, 6), (9, 3), (8, 4),
 (7, 3), (7, 2), (1, 7), (4, 5), (31, 10), (32, 4), 
 (33, 5), (34, 6), (35, 3), (36, 4),(37, 3), (38, 2), (39, 7), (40, 5);
 
 -- Registros VIDEOJUEGO
-INSERT INTO VIDEOJUEGO (cod_producto, tipo, tamaño) VALUES
+INSERT INTO videojuego (cod_producto, tipo, tamaño) VALUES
 (11, 'Acción', 5000), (12, 'Aventura', 4000), (13, 'Estrategia', 3000),
 (14, 'RPG', 6000), (15, 'Simulación', 4500), (16, 'Shooter', 5500),
 (17, 'Deportes', 3200), (18, 'Carreras', 4800), (19, 'Puzzle', 2000),
@@ -193,7 +192,7 @@ INSERT INTO VIDEOJUEGO (cod_producto, tipo, tamaño) VALUES
 (50, 'Multijugador', 6200);
 
 -- Registros MERCHANDISING
-INSERT INTO MERCHANDISING (cod_producto, f_lanzamiento) VALUES
+INSERT INTO merchandising (cod_producto, f_lanzamiento) VALUES
 (21, '2022-01-01'), (22, '2022-02-01'), (23, '2022-03-01'),
 (24, '2022-04-01'), (25, '2022-05-01'), (26, '2022-06-01'),
 (27, '2022-07-01'), (28, '2022-08-01'), (29, '2022-09-01'),
@@ -203,7 +202,7 @@ INSERT INTO MERCHANDISING (cod_producto, f_lanzamiento) VALUES
 (60, '2023-10-31');
 
 -- Registros COMPRAR
-INSERT INTO COMPRAR (cod_cliente, cod_producto, promocion, fecha) VALUES
+INSERT INTO comprar (cod_cliente, cod_producto, promocion, fecha) VALUES
 (1, 12, null, '2023-01-01'), (2, 2, null, '2023-02-01'),
 (3, 20, '20% OFF', '2023-03-01'), (4, 11, '25% OFF', '2023-04-01'),
 (5, 5, '30% OFF', '2023-05-01'), (6, 6, '35% OFF', '2023-06-01'),
@@ -220,7 +219,7 @@ INSERT INTO COMPRAR (cod_cliente, cod_producto, promocion, fecha) VALUES
 (29, 59, '50% OFF', '2025-05-25'), (30, 60, '55% OFF', '2025-06-30');
 
 -- Registros COLABORADOR
-INSERT INTO COLABORADOR (n_usuario, nombre) VALUES
+INSERT INTO colaborador (n_usuario, nombre) VALUES
 ('carlohernandez', 'Carlos Hernández'),
 ('anamartinez', 'Ana Martínez'),
 ('pedro_torres', 'Pedro Torres'),
@@ -233,7 +232,7 @@ INSERT INTO COLABORADOR (n_usuario, nombre) VALUES
 ('laurafdez', 'Laura Fernández');
 
 -- Registros PROMOCIONAR
-INSERT INTO PROMOCIONAR (cod_producto, usuarioColaborador) VALUES
+INSERT INTO promocionar (cod_producto, usuarioColaborador) VALUES
 (1, 'carlohernandez'),
 (2, 'anamartinez'),
 (3, 'pedro_torres'),
@@ -246,7 +245,7 @@ INSERT INTO PROMOCIONAR (cod_producto, usuarioColaborador) VALUES
 (10, 'laurafdez');
 
 -- Registros PROVEEDOR
-INSERT INTO PROVEEDOR (nif, nombre, direccion) VALUES
+INSERT INTO proveedor (nif, nombre, direccion) VALUES
 ('123A', 'Sony Electronics', 'Tokyo, Japón'),
 ('234B', 'Nintendo Co.', 'Kyoto, Japón'),
 ('345C', 'Microsoft Corporation', 'Redmond, EE.UU.'),
@@ -259,7 +258,7 @@ INSERT INTO PROVEEDOR (nif, nombre, direccion) VALUES
 ('012J', 'Rockstar Games', 'Nueva York, EE.UU.');
 
 -- Registros PROVEER
-INSERT INTO PROVEER (cod_producto, nif_proveedor) VALUES
+INSERT INTO proveer (cod_producto, nif_proveedor) VALUES
 (1, '123A'),
 (2, '234B'),
 (3, '234B'),
