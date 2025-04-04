@@ -4,7 +4,7 @@ import App.controller.ControllerCliente;
 
 import java.util.Scanner;
 
-public class mainCliente {
+public class MainCliente {
     public static void main(String[] args) {
         ControllerCliente controlador = new ControllerCliente();
         Scanner scanner = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class mainCliente {
         int opcion;
         do {
             System.out.println("\nMenú:");
-            System.out.println("1. Mostrar todas los clientes");
+            System.out.println("1. Mostrar todos los clientes");
             System.out.println("2. Crear cliente");
             System.out.println("3. Actualizar cliente");
             System.out.println("4. Eliminar cliente");
