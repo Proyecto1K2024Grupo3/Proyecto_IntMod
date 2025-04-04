@@ -43,4 +43,12 @@ public class Sala {
     public void setN_sala(int n_sala) {
         this.n_sala = n_sala;
     }
+
+    @Override
+    public String toString() {
+        return "Sala{" +
+                "n_sala=" + n_sala +
+                ", tamanyo=" + tamanyo +
+                '}';
+    }
 }
