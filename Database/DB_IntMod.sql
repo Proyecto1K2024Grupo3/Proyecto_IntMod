@@ -43,7 +43,7 @@ CREATE TABLE sala(
 CREATE TABLE partida(
     cod_partida INT AUTO_INCREMENT,
     inicio TIME,
-    direccion INT,
+    fin TIME,
     n_sala INT,
     CONSTRAINT PK_PARTIDA PRIMARY KEY (cod_partida),
     CONSTRAINT FK_PARTIDA_SALA FOREIGN KEY (n_sala) REFERENCES sala(n_sala) ON DELETE NO ACTION ON UPDATE CASCADE
