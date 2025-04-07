@@ -141,10 +141,4 @@ public class ClienteDAO {
         }
         return total;
     }
-
-
-
-
-
-
 }
