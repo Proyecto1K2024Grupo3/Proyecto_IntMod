@@ -7,17 +7,29 @@ import App.view.VistaSala;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Controlador para gestionar las operaciones relacionadas con salas.
+ * Conecta la vista (VistaSala) con el modelo (SalaDAO).
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class ControllerSala {
     private SalaDAO salaDAO;
     private VistaSala vistaSala;
 
+    /**
+     * Constructor del controlador de salas.
+     * Inicializa la vista y obtiene la instancia del DAO de salas.
+     */
     public ControllerSala() {
         // Crear conexión a la base de datos
-
         salaDAO = SalaDAO.getInstance();
         vistaSala = new VistaSala();
     }
 
+    /**
+     * Muestra todas las salas almacenadas en la base de datos.
+     */
     public void mostrarTodasLasSalas() {
         try {
             List<Sala> salas = salaDAO.getAllSalas();
@@ -27,6 +39,9 @@ public class ControllerSala {
         }
     }
 
+    /**
+     * Busca y muestra una sala por su número (n_sala), ingresado desde la vista.
+     */
     public void mostrarSalaPorNSala() {
         try {
             int n_sala = vistaSala.obtenerNSala();
@@ -37,6 +52,10 @@ public class ControllerSala {
         }
     }
 
+    /**
+     * Crea una nueva sala con los datos ingresados desde la vista
+     * y la inserta en la base de datos.
+     */
     public void crearSala() {
         try {
             Sala sala = vistaSala.crearSala();
@@ -46,6 +65,10 @@ public class ControllerSala {
         }
     }
 
+    /**
+     * Actualiza los datos de una sala existente con la información
+     * proporcionada desde la vista.
+     */
     public void actualizarSala() {
         try {
             Sala sala = vistaSala.obtenerDatosActualizados();
@@ -55,6 +78,10 @@ public class ControllerSala {
         }
     }
 
+    /**
+     * Elimina una sala de la base de datos usando su número (n_sala)
+     * ingresado desde la vista.
+     */
     public void eliminarSala() {
         try {
             int n_sala = vistaSala.obtenerNSalaAEliminar();
@@ -64,5 +91,5 @@ public class ControllerSala {
         }
     }
 
-// Otros métodos del controlador...
+    // Otros métodos del controlador...
 }

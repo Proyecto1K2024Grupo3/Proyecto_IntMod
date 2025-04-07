@@ -4,6 +4,8 @@ package App.model;
  * Clase que representa una línea de venta.
  */
 public class LineaVenta {
+
+    // Propiedades de la clase
     private Producto producto;
     private int cantidad;
     private double total;
@@ -20,30 +22,36 @@ public class LineaVenta {
         this.total = total;
     }
 
-    // Getters y Setters
+    // Devuelve el producto asociado (puede ser parte de una compra o pedido)
     public Producto getProducto() {
         return producto;
     }
 
+    // Establece el producto asociado
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
 
+    // Devuelve la cantidad de unidades del producto en esta transacción
     public int getCantidad() {
         return cantidad;
     }
 
+    // Establece la cantidad de unidades del producto
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
+    // Devuelve el total correspondiente a esta línea (cantidad * precio unitario)
     public double getTotal() {
         return total;
     }
 
+    // Establece el total correspondiente a esta línea
     public void setTotal(double total) {
         this.total = total;
     }
+
 
     // Métodos para exportar a JSON y XML
     public String toJson() {
