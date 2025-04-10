@@ -104,4 +104,13 @@ public class Proveedor {
                 .append("</Proveedor>");
         return xmlBuilder.toString();
     }
+
+    @Override
+    public String toString() {
+        return "Proveedor{" +
+                "nif='" + nif + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                '}';
+    }
 }
