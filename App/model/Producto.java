@@ -4,7 +4,8 @@ package App.model;
  * @author Pablo, Emilio y Sergio
  */
 public class Producto {
-    private int precio;
+    private int cod_producto;
+    private double precio;
     private int unidades;
     private String nombre;
     private Proveedor provedor;
@@ -18,12 +19,28 @@ public class Producto {
      * @param proveedor Proovedor del producto
      * @param empleadoRegistro Empleado que ha registrado
      */
-    public Producto(String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleadoRegistro) {
+    public Producto(int cod_producto, String nombre, double precio, int unidades, Proveedor proveedor, Empleado empleadoRegistro) {
+        this.cod_producto = cod_producto;
         this.nombre = nombre;
         this.precio = precio;
         this.unidades = unidades;
         this.provedor = proveedor;
         this.empleadoRegistro = empleadoRegistro;
+    }
+
+    public Producto(int cod_producto, double precio, int unidades, String nombre) {
+        this.cod_producto = cod_producto;
+        this.precio = precio;
+        this.unidades = unidades;
+        this.nombre = nombre;
+    }
+
+    public int getCod_producto() {
+        return cod_producto;
+    }
+
+    public void setCod_producto(int cod_producto) {
+        this.cod_producto = cod_producto;
     }
 
     // Devuelve el nombre del producto
@@ -37,12 +54,12 @@ public class Producto {
     }
 
     // Devuelve el precio del producto (en la unidad monetaria que uses, por ejemplo euros)
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
     // Establece el precio del producto
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -102,5 +119,17 @@ public class Producto {
                 .append("    <nombre>").append(nombre).append("</nombre>\n")
                 .append("</Producto>");
         return xmlBuilder.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "cod_producto=" + cod_producto +
+                ", precio=" + precio +
+                ", unidades=" + unidades +
+                ", nombre='" + nombre + '\'' +
+                ", provedor=" + provedor +
+                ", empleadoRegistro=" + empleadoRegistro +
+                '}';
     }
 }
