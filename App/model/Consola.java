@@ -16,8 +16,8 @@ public class Consola extends Producto {
      * @param proveedor Proveedor de la consola.
      * @param empleado Empleado asociado a la consola.
      */
-    public Consola(String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleado) {
-        super(nombre, precio, unidades, proveedor, empleado);
+    public Consola(int cod, String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleado) {
+        super(cod, nombre, precio, unidades, proveedor, empleado);
     }
 
     /**
@@ -30,8 +30,8 @@ public class Consola extends Producto {
      * @param empleado Empleado asociado a la consola.
      * @param consolaReemplazar Consola que será reemplazada.
      */
-    public Consola(String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleado, Consola consolaReemplazar) {
-        super(nombre, precio, unidades, proveedor, empleado);
+    public Consola(int cod, String nombre, int precio, int unidades, Proveedor proveedor, Empleado empleado, Consola consolaReemplazar) {
+        super(cod, nombre, precio, unidades, proveedor, empleado);
         this.consolaReemplazar = consolaReemplazar;
     }
 
