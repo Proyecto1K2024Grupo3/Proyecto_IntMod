@@ -4,7 +4,7 @@ import App.controller.ControllerSala;
 
 import java.util.Scanner;
 
-public class MainSala {
+public class TestSala {
     public static void main(String[] args) {
         ControllerSala controlador = new ControllerSala();
         Scanner scanner = new Scanner(System.in);

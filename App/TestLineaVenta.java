@@ -1,44 +1,45 @@
 package App;
 
-import App.controller.ControllerCliente;
+import App.controller.ControllerLineaVenta;
+import App.controller.ControllerProveedores;
 
 import java.util.Scanner;
 
-public class MainCliente {
+public class TestLineaVenta {
     public static void main(String[] args) {
-        ControllerCliente controlador = new ControllerCliente();
+        ControllerLineaVenta controlador = new ControllerLineaVenta();
         Scanner scanner = new Scanner(System.in);
 
         int opcion;
         do {
             System.out.println("\nMenú:");
-            System.out.println("1. Mostrar todos los clientes");
-            System.out.println("2. Crear cliente");
-            System.out.println("3. Actualizar cliente");
-            System.out.println("4. Eliminar cliente");
-            System.out.println("5. Mostrar cliente por DNI");
+            System.out.println("1. Mostrar todas las lineas de venta");
+            System.out.println("2. Crear linea de venta");
+            System.out.println("3. Actualizar linea de venta");
+            System.out.println("4. Eliminar linea de venta");
+            System.out.println("5. Mostrar linea de venta por codigo de producto");
             System.out.println("6. Salir");
             System.out.print("Elige una opción: ");
             opcion = Integer.parseInt(scanner.nextLine());
 
             switch (opcion) {
                 case 1:
-                    controlador.mostrarTodosLosClientes();
+                    controlador.mostrarTodasLasLineasDeVenta();
                     break;
                 case 2:
-                    controlador.crearCliente();
+                    controlador.crearLineaVenta();
                     System.out.println("Cliente creado correctamente.");
                     break;
                 case 3:
-                    controlador.actualizarCliente();
+                    controlador.actualizarLineaVenta();
                     System.out.println("Cliente actualizado correctamente.");
                     break;
                 case 4:
-                    controlador.eliminarCliente();
+                    controlador.eliminarLineaVenta();
                     System.out.println("Cliente eliminado correctamente.");
                     break;
                 case 5:
-                    controlador.mostrarClienteDNI();
+                    controlador.mostrarLineaCodProducto();
                     break;
                 case 6:
                     System.out.println("Saliendo...");
