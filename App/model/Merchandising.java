@@ -20,8 +20,8 @@ public class Merchandising extends Producto {
      * @param proveedor Proveedor del producto
      * @param empleado Empleado que ha registrado el producto
      */
-    public Merchandising(String nombre, int precio, int unidades, String tipo, double tamanyo, Proveedor proveedor, Empleado empleado) {
-        super(nombre, precio, unidades, proveedor, empleado);
+    public Merchandising(int cod, String nombre, int precio, int unidades, String tipo, double tamanyo, Proveedor proveedor, Empleado empleado) {
+        super(cod, nombre, precio, unidades, proveedor, empleado);
         this.tipo = tipo;
         this.tamanyo = tamanyo;
     }
