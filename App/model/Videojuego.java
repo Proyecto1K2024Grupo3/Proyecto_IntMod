@@ -1,8 +1,7 @@
 package App.model;
 
 /**
- * Clase que representa un Videojuego en el sistema.
- * @author Emilio, Pablo, Sergio
+ *
  */
 public class Videojuego extends Producto {
 
@@ -13,22 +12,22 @@ public class Videojuego extends Producto {
     private String f_lanzamiento;
 
     /**
-     * Constructor por defecto de la clase videojuego
+     * Default constructor
+     */
+
+    /**
+     * Default constructor
      *
      * @param nombre
      * @param precio
      * @param unidades
      */
-    public Videojuego(String nombre, int precio, int unidades, String f_lanzamiento, Proveedor proveedor, Empleado empleado) {
-        super(nombre, precio, unidades, proveedor, empleado);
+
+        public Videojuego(int cod, String nombre, int precio, int unidades, String f_lanzamiento, Proveedor proveedor, Empleado empleado) {
+        super(cod, nombre, precio, unidades, proveedor, empleado);
         this.f_lanzamiento = f_lanzamiento;
     }
 
-    /**
-     * Convierte los datos del videojuego a formato JSON.
-     *
-     * @return Representación JSON del videojuego.
-     */
     public String toJson() {
         StringBuilder jsonBuilder = new StringBuilder();
         jsonBuilder.append("(\n")
@@ -40,11 +39,6 @@ public class Videojuego extends Producto {
         return jsonBuilder.toString();
     }
 
-    /**
-     * Convierte los datos del videojuego a formato XML.
-     *
-     * @return Representación XML del videojuego.
-     */
     public String toXML() {
         StringBuilder xmlBuilder = new StringBuilder();
         xmlBuilder.append("<Videojuego>\n")
