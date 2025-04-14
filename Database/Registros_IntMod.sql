@@ -182,24 +182,24 @@ INSERT INTO sustituir (cod_producto1, cod_producto2) VALUES
 (33, 5), (34, 6), (35, 3), (36, 4),(37, 3), (38, 2), (39, 7), (40, 5);
 
 -- Registros VIDEOJUEGO
-INSERT INTO videojuego (cod_producto, tipo, tamaño) VALUES
-(11, 'Acción', 5000), (12, 'Aventura', 4000), (13, 'Estrategia', 3000),
-(14, 'RPG', 6000), (15, 'Simulación', 4500), (16, 'Shooter', 5500),
-(17, 'Deportes', 3200), (18, 'Carreras', 4800), (19, 'Puzzle', 2000),
-(20, 'Terror', 3600), (41, 'Acción', 7000), (42, 'Terror', 6500), (43, 'RPG', 8000),
-(44, 'Western', 7500), (45, 'Plataformas', 5000), (46, 'Indie', 3000),
-(47, 'RPG', 8500), (48, 'Shoot em up', 4500), (49, 'JRPG', 7800),
-(50, 'Multijugador', 6200);
+INSERT INTO videojuego (cod_producto, f_lanzamiento) VALUES
+(11, '2022-01-15'), (12, '2022-02-15'), (13, '2022-03-15'),
+(14, '2022-04-15'), (15, '2022-05-15'), (16, '2022-06-15'),
+(17, '2022-07-15'), (18, '2022-08-15'), (19, '2022-09-15'),
+(20, '2022-10-15'), (41, '2023-01-20'), (42, '2023-02-20'), (43, '2023-03-20'),
+(44, '2023-04-20'), (45, '2023-05-20'), (46, '2023-06-20'),
+(47, '2023-07-20'), (48, '2023-08-20'), (49, '2023-09-20'),
+(50, '2023-10-20');
 
 -- Registros MERCHANDISING
-INSERT INTO merchandising (cod_producto, f_lanzamiento) VALUES
-(21, '2022-01-01'), (22, '2022-02-01'), (23, '2022-03-01'),
-(24, '2022-04-01'), (25, '2022-05-01'), (26, '2022-06-01'),
-(27, '2022-07-01'), (28, '2022-08-01'), (29, '2022-09-01'),
-(30, '2022-10-01'), (51, '2023-01-10'), (52, '2023-02-15'), (53, '2023-03-20'),
-(54, '2023-04-25'), (55, '2023-05-30'), (56, '2023-06-05'),
-(57, '2023-07-12'), (58, '2023-08-19'), (59, '2023-09-23'),
-(60, '2023-10-31');
+INSERT INTO merchandising (cod_producto, tipo, tamanyo) VALUES
+(21, 'Camiseta', 40), (22, 'Camiseta', 42), (23, 'Camiseta', 44),
+(24, 'Poster', 60), (25, 'Poster', 70), (26, 'Poster', 80),
+(27, 'Taza', 10), (28, 'Taza', 12), (29, 'Taza', 14),
+(30, 'Llavero', 5), (51, 'Camiseta', 40), (52, 'Camiseta', 42), (53, 'Camiseta', 44),
+(54, 'Poster', 60), (55, 'Poster', 70), (56, 'Poster', 80),
+(57, 'Taza', 10), (58, 'Taza', 12), (59, 'Taza', 14),
+(60, 'Llavero', 5);
 
 -- Registros COMPRAR
 INSERT INTO comprar (cod_cliente, cod_producto, promocion, fecha) VALUES
