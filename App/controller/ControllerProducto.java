@@ -1,18 +1,15 @@
 package App.controller;
 
-import App.db.EmpleadoDAO;
 import App.db.ProductoDAO;
-import App.model.Empleado;
 import App.model.Producto;
-import App.view.VistaEmpleado;
 import App.view.VistaProducto;
 
 import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Controlador para gestionar las operaciones relacionadas con empleados.
- * Conecta la vista (VistaEmpleado) con el modelo (EmpleadoDAO).
+ * Controlador para gestionar las operaciones relacionadas con productos.
+ * Conecta la vista (VistaProducto) con el modelo (ProductoDAO).
  *
  * @author Emilio, Pablo, Sergio.
  */
@@ -21,8 +18,8 @@ public class ControllerProducto {
     private VistaProducto vistaProducto;
 
     /**
-     * Constructor del controlador de empleados.
-     * Inicializa la vista y obtiene la instancia del DAO de empleados.
+     * Constructor del controlador de productos.
+     * Inicializa la vista y obtiene la instancia del DAO de productos.
      */
     public ControllerProducto() {
         // Crear conexión a la base de datos
@@ -31,7 +28,7 @@ public class ControllerProducto {
     }
 
     /**
-     * Muestra todos los empleados almacenados en la base de datos.
+     * Muestra todos los productos almacenados en la base de datos.
      */
     public void mostrarTodosLosProductos() {
         try {
@@ -43,7 +40,7 @@ public class ControllerProducto {
     }
 
     /**
-     * Busca y muestra un empleado por su DNI ingresado desde la vista.
+     * Busca y muestra un producto por su código ingresado desde la vista.
      */
     public void mostrarProductoCod() {
         try {
@@ -56,7 +53,7 @@ public class ControllerProducto {
     }
 
     /**
-     * Crea un nuevo empleado con los datos ingresados desde la vista
+     * Crea un nuevo producto con los datos ingresados desde la vista
      * y lo inserta en la base de datos.
      */
     public void crearProducto() {
@@ -69,7 +66,7 @@ public class ControllerProducto {
     }
 
     /**
-     * Actualiza la información de un empleado existente con los datos
+     * Actualiza la información de un producto existente con los datos
      * proporcionados desde la vista.
      */
     public void actualizarProducto() {
@@ -82,7 +79,7 @@ public class ControllerProducto {
     }
 
     /**
-     * Elimina un empleado de la base de datos usando el DNI ingresado desde la vista.
+     * Elimina un producto de la base de datos usando el código ingresado desde la vista.
      */
     public void eliminarProducto() {
         try {

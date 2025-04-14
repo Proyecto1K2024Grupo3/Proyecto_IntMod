@@ -29,6 +29,8 @@ public class LineaVentaDAO {
     /**
      * Constructor privado para evitar instanciación externa.
      * Obtiene la conexión a la base de datos desde DBConnection.
+     *
+     * @author Emilio, Pablo, Sergio.
      */
     private LineaVentaDAO() {
         this.productoDAO = ProductoDAO.getInstance();
@@ -36,8 +38,9 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Método estático para obtener la única instancia de PersonaDAO.
-     * @return instancia única de PersonaDAO.
+     * Método estático para obtener la única instancia de LineaVentaDAO.
+     *
+     * @return instancia única de LineaVentaDAO.
      */
     public static synchronized LineaVentaDAO getInstance() {
         if (instance == null) {
@@ -47,8 +50,9 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Inserta una nueva lineaVenta en la base de datos.
-     * @param lineaVenta lineaVenta a insertar
+     * Inserta una nueva LineaVenta en la base de datos.
+     *
+     * @param lineaVenta LineaVenta a insertar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void insertLineaVenta(LineaVenta lineaVenta) throws SQLException {
@@ -61,9 +65,9 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Obtiene todas las personas almacenadas en la base de datos.
+     * Obtiene todas las LineasVenta almacenadas en la base de datos.
      *
-     * @return Lista de objetos Persona.
+     * @return Lista de objetos LineaVenta.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public List<LineaVenta> getAllLineasVenta() throws SQLException {
@@ -78,9 +82,10 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Obtiene una persona a partir de su DNI.
-     * @param dni Identificador único de la persona.
-     * @return Objeto Persona si se encuentra, null si no.
+     * Obtiene una LineaVenta a partir de su código de producto.
+     *
+     * @param cod_producto Código del producto de la LineaVenta.
+     * @return Objeto LineaVenta si se encuentra, null si no.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public LineaVenta getLineaByCodProducto(int cod_producto) throws SQLException {
@@ -96,8 +101,9 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Actualiza los datos de una persona en la base de datos.
-     * @param persona Objeto Persona con los datos actualizados.
+     * Actualiza los datos de una LineaVenta en la base de datos.
+     *
+     * @param lineaVenta Objeto LineaVenta con los datos actualizados.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void updateLineaVenta(LineaVenta lineaVenta) throws SQLException {
@@ -109,8 +115,9 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Elimina una persona de la base de datos por su DNI.
-     * @param dni Identificador único de la persona a eliminar.
+     * Elimina una LineaVenta de la base de datos por su código de producto.
+     *
+     * @param cod_producto Código del producto de la LineaVenta a eliminar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void deleteLineaVentaByCodProducto(int cod_producto) throws SQLException {
@@ -121,9 +128,10 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Convierte un ResultSet en un objeto Persona.
+     * Convierte un ResultSet en un objeto LineaVenta.
+     *
      * @param resultSet Resultado de la consulta SQL.
-     * @return Objeto Persona con los datos del ResultSet.
+     * @return Objeto LineaVenta con los datos del ResultSet.
      * @throws SQLException Si ocurre un error en la conversión.
      */
     private LineaVenta resultSetToLineaVenta(ResultSet resultSet) throws SQLException {
@@ -136,8 +144,9 @@ public class LineaVentaDAO {
     }
 
     /**
-     * Obtiene el total de personas almacenadas en la base de datos.
-     * @return Número total de personas.
+     * Obtiene el total de LineasVenta almacenadas en la base de datos.
+     *
+     * @return Número total de LineasVenta.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public int totalLineaVenta() throws SQLException {

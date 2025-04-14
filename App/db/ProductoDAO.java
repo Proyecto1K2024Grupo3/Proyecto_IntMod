@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clase PersonaDAO que gestiona el acceso a la base de datos para la entidad Persona.
+ * Clase ProductoDAO que gestiona el acceso a la base de datos para la entidad Producto.
  * Implementa el patrón Singleton para asegurar una única instancia.
  */
 public class ProductoDAO {
 
-    // Instancia única de PersonaDAO
+    // Instancia única de ProductoDAO
     private static ProductoDAO instance;
     // Conexión a la base de datos
     private Connection connection;
@@ -38,8 +38,9 @@ public class ProductoDAO {
     }
 
     /**
-     * Método estático para obtener la única instancia de PersonaDAO.
-     * @return instancia única de PersonaDAO.
+     * Método estático para obtener la única instancia de ProductoDAO.
+     *
+     * @return instancia única de ProductoDAO.
      */
     public static synchronized ProductoDAO getInstance() {
         if (instance == null) {
@@ -49,8 +50,9 @@ public class ProductoDAO {
     }
 
     /**
-     * Inserta una nueva persona en la base de datos.
-     * @param persona Objeto Persona a insertar.
+     * Inserta un nuevo producto en la base de datos.
+     *
+     * @param producto Objeto Producto a insertar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void insertProducto(Producto producto) throws SQLException {
@@ -64,8 +66,9 @@ public class ProductoDAO {
     }
 
     /**
-     * Obtiene todas las personas almacenadas en la base de datos.
-     * @return Lista de objetos Persona.
+     * Obtiene todos los productos almacenados en la base de datos.
+     *
+     * @return Lista de objetos Producto.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public List<Producto> getAllProductos() throws SQLException {
@@ -80,9 +83,10 @@ public class ProductoDAO {
     }
 
     /**
-     * Obtiene una persona a partir de su DNI.
-     * @param dni Identificador único de la persona.
-     * @return Objeto Persona si se encuentra, null si no.
+     * Obtiene un producto a partir de su código.
+     *
+     * @param cod Código único del producto.
+     * @return Objeto Producto si se encuentra, null si no.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public Producto getProductoByCod(int cod) throws SQLException {
@@ -98,8 +102,9 @@ public class ProductoDAO {
     }
 
     /**
-     * Actualiza los datos de una persona en la base de datos.
-     * @param persona Objeto Persona con los datos actualizados.
+     * Actualiza los datos de un producto en la base de datos.
+     *
+     * @param producto Objeto Producto con los datos actualizados.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void updateProducto(Producto producto) throws SQLException {
@@ -113,8 +118,9 @@ public class ProductoDAO {
     }
 
     /**
-     * Elimina una persona de la base de datos por su DNI.
-     * @param dni Identificador único de la persona a eliminar.
+     * Elimina un producto de la base de datos por su código.
+     *
+     * @param cod Código único del producto a eliminar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void deleteProductoByCod(int cod) throws SQLException {
@@ -125,9 +131,10 @@ public class ProductoDAO {
     }
 
     /**
-     * Convierte un ResultSet en un objeto Persona.
+     * Convierte un ResultSet en un objeto Producto.
+     *
      * @param resultSet Resultado de la consulta SQL.
-     * @return Objeto Persona con los datos del ResultSet.
+     * @return Objeto Producto con los datos del ResultSet.
      * @throws SQLException Si ocurre un error en la conversión.
      */
     private Producto resultSetToProducto(ResultSet resultSet) throws SQLException {
@@ -139,8 +146,9 @@ public class ProductoDAO {
     }
 
     /**
-     * Obtiene el total de personas almacenadas en la base de datos.
-     * @return Número total de personas.
+     * Obtiene el total de productos almacenados en la base de datos.
+     *
+     * @return Número total de productos.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public int totalProductos() throws SQLException {

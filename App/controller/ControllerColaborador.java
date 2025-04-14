@@ -10,6 +10,10 @@ import java.util.List;
 /**
  * Controlador para gestionar las operaciones relacionadas con colaboradores.
  * Conecta la vista (VistaColaborador) con el modelo (ColaboradorDAO).
+ * Permite realizar operaciones de consulta, creación, actualización y eliminación
+ * sobre colaboradores.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class ControllerColaborador {
     private ColaboradorDAO colaboradorDAO;
@@ -38,10 +42,11 @@ public class ControllerColaborador {
 
     /**
      * Busca y muestra un colaborador por su nombre de usuario.
+     *
+     * @param nUsuario Nombre de usuario del colaborador que se desea buscar.
      */
-    public void mostrarColaboradorPorUsuario() {
+    public void mostrarColaboradorPorUsuario(String nUsuario) {
         try {
-            String nUsuario = vistaColaborador.obtenerUsuario();
             Colaborador colaborador = colaboradorDAO.obtenerColaboradorPorUsuario(nUsuario);
             vistaColaborador.mostrarColaborador(colaborador);
         } catch (SQLException e) {
@@ -51,10 +56,11 @@ public class ControllerColaborador {
 
     /**
      * Crea un nuevo colaborador y lo inserta en la base de datos.
+     *
+     * @param colaborador Objeto Colaborador que contiene los datos del nuevo colaborador.
      */
-    public void crearColaborador() {
+    public void crearColaborador(Colaborador colaborador) {
         try {
-            Colaborador colaborador = vistaColaborador.crearColaborador();
             colaboradorDAO.insertarColaborador(colaborador);
             vistaColaborador.mostrarMensaje("Colaborador creado correctamente.");
         } catch (SQLException e) {
@@ -64,10 +70,11 @@ public class ControllerColaborador {
 
     /**
      * Actualiza los datos de un colaborador existente.
+     *
+     * @param colaborador Objeto Colaborador que contiene los datos actualizados.
      */
-    public void actualizarColaborador() {
+    public void actualizarColaborador(Colaborador colaborador) {
         try {
-            Colaborador colaborador = vistaColaborador.obtenerDatosActualizados();
             colaboradorDAO.actualizarColaborador(colaborador);
             vistaColaborador.mostrarMensaje("Colaborador actualizado correctamente.");
         } catch (SQLException e) {
@@ -76,11 +83,12 @@ public class ControllerColaborador {
     }
 
     /**
-     * Elimina un colaborador por su nombre de usuario.
+     * Elimina un colaborador de la base de datos usando su nombre de usuario.
+     *
+     * @param nUsuario Nombre de usuario del colaborador que se desea eliminar.
      */
-    public void eliminarColaborador() {
+    public void eliminarColaborador(String nUsuario) {
         try {
-            String nUsuario = vistaColaborador.obtenerUsuarioAEliminar();
             colaboradorDAO.eliminarColaboradorPorUsuario(nUsuario);
             vistaColaborador.mostrarMensaje("Colaborador eliminado correctamente.");
         } catch (SQLException e) {
@@ -88,4 +96,3 @@ public class ControllerColaborador {
         }
     }
 }
-

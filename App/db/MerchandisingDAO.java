@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MerchandisingDAO {
 
-    // Instancia única de PersonaDAO
+    // Instancia única de MerchandisingDAO
     private static MerchandisingDAO instance;
     // Conexión a la base de datos
     private Connection connection;
@@ -38,8 +38,9 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Método estático para obtener la única instancia de PersonaDAO.
-     * @return instancia única de PersonaDAO.
+     * Método estático para obtener la única instancia de MerchandisingDAO.
+     *
+     * @return instancia única de MerchandisingDAO.
      */
     public static synchronized MerchandisingDAO getInstance() {
         if (instance == null) {
@@ -49,8 +50,9 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Inserta una nueva persona en la base de datos.
-     * @param persona Objeto Persona a insertar.
+     * Inserta un nuevo merchandising en la base de datos.
+     *
+     * @param merchandising Objeto Merchandising a insertar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void insertMerchandising(Merchandising merchandising) throws SQLException {
@@ -63,8 +65,9 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Obtiene todas las personas almacenadas en la base de datos.
-     * @return Lista de objetos Persona.
+     * Obtiene todos los merchandising almacenados en la base de datos.
+     *
+     * @return Lista de objetos Merchandising.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public List<Merchandising> getAllMerchandising() throws SQLException {
@@ -79,10 +82,10 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Obtiene una persona a partir de su DNI.
+     * Obtiene un merchandising a partir de su tipo.
      *
-     * @param dni Identificador único de la persona.
-     * @return Objeto Persona si se encuentra, null si no.
+     * @param tipo Tipo de merchandising.
+     * @return Objeto Merchandising si se encuentra, null si no.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public Merchandising getMerchandisingByTipo(String tipo) throws SQLException {
@@ -98,8 +101,9 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Actualiza los datos de una persona en la base de datos.
-     * @param persona Objeto Persona con los datos actualizados.
+     * Actualiza los datos de un merchandising en la base de datos.
+     *
+     * @param merchandising Objeto Merchandising con los datos actualizados.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void updateMerchandising(Merchandising merchandising) throws SQLException {
@@ -112,8 +116,9 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Elimina una persona de la base de datos por su DNI.
-     * @param dni Identificador único de la persona a eliminar.
+     * Elimina un merchandising de la base de datos por su tipo.
+     *
+     * @param tipo Tipo del merchandising a eliminar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void deleteMerchandisingByTipo(String tipo) throws SQLException {
@@ -124,13 +129,13 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Convierte un ResultSet en un objeto Persona.
+     * Convierte un ResultSet en un objeto Merchandising.
+     *
      * @param resultSet Resultado de la consulta SQL.
-     * @return Objeto Persona con los datos del ResultSet.
+     * @return Objeto Merchandising con los datos del ResultSet.
      * @throws SQLException Si ocurre un error en la conversión.
      */
     private Merchandising resultSetToMerchandising(ResultSet resultSet) throws SQLException {
-
         Producto producto = productoDAO.getProductoByCod(resultSet.getInt("cod_producto"));
 
         return new Merchandising(
@@ -144,8 +149,9 @@ public class MerchandisingDAO {
     }
 
     /**
-     * Obtiene el total de personas almacenadas en la base de datos.
-     * @return Número total de personas.
+     * Obtiene el total de merchandising almacenados en la base de datos.
+     *
+     * @return Número total de merchandising.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public int totalMerchandising() throws SQLException {

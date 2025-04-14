@@ -10,6 +10,8 @@ import java.util.List;
 /**
  * Controlador para gestionar las operaciones relacionadas con clientes.
  * Conecta la vista (VistaCliente) con el modelo (ClienteDAO).
+ * Permite realizar operaciones de consulta, creación, actualización y eliminación
+ * sobre clientes, accediendo a la base de datos mediante ClienteDAO.
  *
  * @author Emilio, Pablo, Sergio
  */
@@ -22,7 +24,6 @@ public class ControllerCliente {
      * Inicializa la vista y obtiene la instancia del DAO de clientes.
      */
     public ControllerCliente() {
-        // Crear conexión a la base de datos
         clienteDAO = ClienteDAO.getInstance();
         vistaCliente = new VistaCliente();
     }
@@ -40,11 +41,12 @@ public class ControllerCliente {
     }
 
     /**
-     * Busca y muestra un cliente por su DNI ingresado desde la vista.
+     * Busca y muestra un cliente por su DNI.
+     *
+     * @param dni DNI del cliente que se desea buscar.
      */
-    public void mostrarClienteDNI() {
+    public void mostrarClienteDNI(String dni) {
         try {
-            String dni = vistaCliente.obtenerDni();
             Cliente cliente = clienteDAO.getClienteByDni(dni);
             vistaCliente.mostrarCliente(cliente);
         } catch (SQLException e) {
@@ -53,12 +55,12 @@ public class ControllerCliente {
     }
 
     /**
-     * Crea un nuevo cliente con los datos ingresados desde la vista
-     * y lo inserta en la base de datos.
+     * Crea un nuevo cliente y lo inserta en la base de datos.
+     *
+     * @param cliente Objeto Cliente que contiene los datos del nuevo cliente.
      */
-    public void crearCliente() {
+    public void crearCliente(Cliente cliente) {
         try {
-            Cliente cliente = vistaCliente.crearCliente();
             clienteDAO.insertCliente(cliente);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -66,12 +68,12 @@ public class ControllerCliente {
     }
 
     /**
-     * Actualiza la información de un cliente existente con los datos
-     * proporcionados desde la vista.
+     * Actualiza la información de un cliente existente.
+     *
+     * @param cliente Objeto Cliente que contiene los datos actualizados.
      */
-    public void actualizarCliente() {
+    public void actualizarCliente(Cliente cliente) {
         try {
-            Cliente cliente = vistaCliente.obtenerDatosActualizados();
             clienteDAO.updateCliente(cliente);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -79,11 +81,12 @@ public class ControllerCliente {
     }
 
     /**
-     * Elimina un cliente de la base de datos usando el DNI ingresado desde la vista.
+     * Elimina un cliente de la base de datos usando su DNI.
+     *
+     * @param dni DNI del cliente que se desea eliminar.
      */
-    public void eliminarCliente() {
+    public void eliminarCliente(String dni) {
         try {
-            String dni = vistaCliente.obtenerDniAEliminar();
             clienteDAO.deleteClienteByDni(dni);
         } catch (SQLException e) {
             e.printStackTrace();
