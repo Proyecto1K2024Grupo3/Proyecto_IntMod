@@ -1,6 +1,5 @@
 package App.db;
 
-import App.model.Empleado;
 import App.model.LineaVenta;
 import App.model.Producto;
 
@@ -10,6 +9,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Clase LineaVentaDAO que gestiona el acceso a la base de datos para el objeto LineaVenta.
+ * Implementa el patrón Singleton para asegurar una única instancia.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 
 public class LineaVentaDAO {
 
