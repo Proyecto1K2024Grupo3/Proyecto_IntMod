@@ -7,19 +7,21 @@ package App.model;
 public class Partida {
     private int codPartida;
     private int inicio;
-    private int direccion;
+    private int fin;
+    private Sala sala;
 
     /**
-     * Constructor parametrizado de la clase Partida
-     * @param codPartida Codigo de la partida
-     * @param inicio Inicio de la partida
-     * @param fin Fin de la partida
-     * @param n_sala Numero de sala donde se juega la partida
+     *
+     * @param codPartida
+     * @param inicio
+     * @param fin
+     * @param sala
      */
-    public Partida(int codPartida, int inicio, int fin, int n_sala) {
+    public Partida(int codPartida, int inicio, int fin, Sala sala) {
         this.codPartida = codPartida;
         this.inicio = inicio;
-        this.direccion = direccion;
+        this.fin = fin;
+        this.sala = sala;
     }
 
     // Método getter para obtener el código de la partida
@@ -42,14 +44,20 @@ public class Partida {
         this.inicio = inicio;
     }
 
-    // Método getter para obtener la dirección (podría representar la orientación, rumbo, o sentido en el juego)
-    public int getDireccion() {
-        return direccion;
+    public int getFin() {
+        return fin;
     }
 
-    // Método setter para establecer la dirección
-    public void setDireccion(int direccion) {
-        this.direccion = direccion;
+    public void setFin(int fin) {
+        this.fin = fin;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 
     /**
@@ -61,7 +69,8 @@ public class Partida {
         jsonBuilder.append("{\n")
                 .append("    \"codPartida\": ").append(codPartida).append(",\n")
                 .append("    \"inicio\": ").append(inicio).append(",\n")
-                .append("    \"direccion\": ").append(direccion).append("\n")
+                .append("    \"fin\": ").append(fin).append("\n")
+                .append("    \"n_sala\": ").append(sala.getN_sala()).append("\n")
                 .append("}");
         return jsonBuilder.toString();
     }
@@ -75,9 +84,11 @@ public class Partida {
         xmlBuilder.append("<Partida>\n")
                 .append("    <codPartida>").append(codPartida).append("</codPartida>\n")
                 .append("    <inicio>").append(inicio).append("</inicio>\n")
-                .append("    <direccion>").append(direccion).append("</direccion>\n")
+                .append("    <fin>").append(fin).append("</fin>\n")
                 .append("</Partida>");
         return xmlBuilder.toString();
     }
+
+
 
 }
