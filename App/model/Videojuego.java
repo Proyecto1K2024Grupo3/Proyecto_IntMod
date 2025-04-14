@@ -5,8 +5,6 @@ package App.model;
  */
 public class Videojuego extends Producto {
 
-    private Consola consolaReemplazar;
-
     // Propiedades
 
     private String f_lanzamiento;
@@ -22,9 +20,21 @@ public class Videojuego extends Producto {
      * @param precio
      * @param unidades
      */
-
         public Videojuego(int cod, String nombre, int precio, int unidades, String f_lanzamiento, Proveedor proveedor, Empleado empleado) {
         super(cod, nombre, precio, unidades, proveedor, empleado);
+        this.f_lanzamiento = f_lanzamiento;
+    }
+
+    public Videojuego(int cod_producto, double precio, int unidades, String nombre, String f_lanzamiento) {
+        super(cod_producto, precio, unidades, nombre);
+        this.f_lanzamiento = f_lanzamiento;
+    }
+
+    public String getF_lanzamiento() {
+        return f_lanzamiento;
+    }
+
+    public void setF_lanzamiento(String f_lanzamiento) {
         this.f_lanzamiento = f_lanzamiento;
     }
 
