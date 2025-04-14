@@ -2,6 +2,7 @@ package App.db;
 
 import App.model.Empleado;
 import App.model.Merchandising;
+import App.model.Producto;
 import App.model.Proveedor;
 
 import java.sql.Connection;
@@ -17,13 +18,14 @@ public class MerchandisingDAO {
     private static MerchandisingDAO instance;
     // Conexión a la base de datos
     private Connection connection;
+    private ProductoDAO productoDAO;
 
     // Consultas SQL predefinidas para operaciones CRUD
-    private static final String INSERT_QUERY = "INSERT INTO merchandising (tipo, tamanyo) VALUES (?, ?)";
+    private static final String INSERT_QUERY = "INSERT INTO merchandising (cod_producto, tipo, tamanyo) VALUES (?, ?, ?)";
     private static final String SELECT_ALL_QUERY = "SELECT * FROM merchandising";
     private static final String SELECT_BY_TIPO_QUERY = "SELECT * FROM merchandising WHERE tipo = ?";
-    private static final String UPDATE_QUERY = "UPDATE merchandising SET tipo = ?, tamanyo = ? WHERE tipo = ?";
-    private static final String DELETE_QUERY = "DELETE FROM merchandising WHERE tipo = ?";
+    private static final String UPDATE_QUERY = "UPDATE merchandising SET tipo = ?, tamanyo = ? WHERE cod_producto = ?";
+    private static final String DELETE_QUERY = "DELETE FROM merchandising WHERE cod_producto = ?";
     private static final String TOTAL_MERCH_QUERY = "SELECT COUNT(*) FROM merchandising";
 
     /**
@@ -32,6 +34,7 @@ public class MerchandisingDAO {
      */
     private MerchandisingDAO() {
         this.connection = DBConnection.getConnection();
+        productoDAO = ProductoDAO.getInstance();
     }
 
     /**
@@ -52,8 +55,9 @@ public class MerchandisingDAO {
      */
     public void insertMerchandising(Merchandising merchandising) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(INSERT_QUERY)) {
-            statement.setString(1, merchandising.getTipo());
-            statement.setDouble(2, merchandising.getTamanyo());
+            statement.setInt(1, merchandising.getCod_producto());
+            statement.setString(2, merchandising.getTipo());
+            statement.setDouble(3, merchandising.getTamanyo());
             statement.executeUpdate();
         }
     }
@@ -100,13 +104,9 @@ public class MerchandisingDAO {
      */
     public void updateMerchandising(Merchandising merchandising) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(UPDATE_QUERY)) {
-            statement.setString(1, merchandising.getNombre());
-            statement.setInt(2, merchandising.getPrecio());
-            statement.setInt(3, merchandising.getUnidades());
-            statement.setString(4, merchandising.getTipo());
-            statement.setDouble(5, merchandising.getTamanyo());
-            statement.setObject(6, merchandising.getProvedor());
-            statement.setObject(7, merchandising.getEmpleadoRegistro());
+            statement.setString(1, merchandising.getTipo());
+            statement.setDouble(2, merchandising.getTamanyo());
+            statement.setInt(3, merchandising.getCod_producto());
             statement.executeUpdate();
         }
     }
@@ -130,14 +130,16 @@ public class MerchandisingDAO {
      * @throws SQLException Si ocurre un error en la conversión.
      */
     private Merchandising resultSetToMerchandising(ResultSet resultSet) throws SQLException {
+
+        Producto producto = productoDAO.getProductoByCod(resultSet.getInt("cod_producto"));
+
         return new Merchandising(
+                producto.getCod_producto(),
+                producto.getNombre(),
+                producto.getPrecio(),
+                producto.getUnidades(),
                 resultSet.getString("tipo"),
-                resultSet.getInt("precio"),
-                resultSet.getInt("unidades"),
-                resultSet.getString("tipo"),
-                resultSet.getDouble("tamanyo"),
-                (Proveedor) resultSet.getObject("proveedor"),
-                (Empleado) resultSet.getObject("empleado")
+                resultSet.getDouble("tamanyo")
         );
     }
 

@@ -2,17 +2,22 @@ package App.controller;
 
 import App.db.EmpleadoDAO;
 import App.db.LineaVentaDAO;
+import App.db.ProductoDAO;
 import App.model.Empleado;
 import App.model.LineaVenta;
+import App.model.Producto;
 import App.view.VistaEmpleado;
 import App.view.VistaLineaVenta;
+import App.view.VistaProducto;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class ControllerLineaVenta {
     private LineaVentaDAO lineaVentaDAO;
+    private ProductoDAO productoDAO;
     private VistaLineaVenta vistaLineaVenta;
+    private VistaProducto vistaProducto;
 
     /**
      * Constructor del controlador de empleados.
@@ -21,6 +26,8 @@ public class ControllerLineaVenta {
     public ControllerLineaVenta() {
         // Crear conexión a la base de datos
         lineaVentaDAO = LineaVentaDAO.getInstance();
+        productoDAO = ProductoDAO.getInstance();
+        vistaProducto = new VistaProducto();
         vistaLineaVenta = new VistaLineaVenta();
     }
 
@@ -55,7 +62,9 @@ public class ControllerLineaVenta {
      */
     public void crearLineaVenta() {
         try {
-            LineaVenta lineaVenta = vistaLineaVenta.crearLineaVenta();
+            int cod_producto = vistaProducto.obtenerCod();
+            Producto producto = productoDAO.getProductoByCod(cod_producto);
+            LineaVenta lineaVenta = vistaLineaVenta.crearLineaVenta(producto);
             lineaVentaDAO.insertLineaVenta(lineaVenta);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -68,7 +77,9 @@ public class ControllerLineaVenta {
      */
     public void actualizarLineaVenta() {
         try {
-            LineaVenta lineaVenta = vistaLineaVenta.obtenerDatosActualizados();
+            int cod_producto = vistaProducto.obtenerCod();
+            Producto producto = productoDAO.getProductoByCod(cod_producto);
+            LineaVenta lineaVenta = vistaLineaVenta.obtenerDatosActualizados(producto);
             lineaVentaDAO.updateLineaVenta(lineaVenta);
         } catch (SQLException e) {
             e.printStackTrace();

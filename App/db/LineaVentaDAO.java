@@ -16,6 +16,7 @@ public class LineaVentaDAO {
     private static LineaVentaDAO instance;
     // Conexión a la base de datos
     private Connection connection;
+    private ProductoDAO productoDAO;
 
     // Consultas SQL predefinidas para operaciones CRUD
     private static final String INSERT_QUERY = "INSERT INTO linea_venta (cod_producto, cantidad, total) VALUES (?, ?, ?)";
@@ -30,6 +31,7 @@ public class LineaVentaDAO {
      * Obtiene la conexión a la base de datos desde DBConnection.
      */
     private LineaVentaDAO() {
+        this.productoDAO = ProductoDAO.getInstance();
         this.connection = DBConnection.getConnection();
     }
 
@@ -50,9 +52,8 @@ public class LineaVentaDAO {
      * @throws SQLException Si ocurre un error en la base de datos.
      */
     public void insertLineaVenta(LineaVenta lineaVenta) throws SQLException {
-        Producto producto;
         try (PreparedStatement statement = connection.prepareStatement(INSERT_QUERY)) {
-            statement.setInt(1, producto.getCodProducto());
+            statement.setInt(1, lineaVenta.getProducto().getCod_producto());
             statement.setInt(2, lineaVenta.getCantidad());
             statement.setDouble(3, lineaVenta.getTotal());
             statement.executeUpdate();
@@ -126,8 +127,10 @@ public class LineaVentaDAO {
      * @throws SQLException Si ocurre un error en la conversión.
      */
     private LineaVenta resultSetToLineaVenta(ResultSet resultSet) throws SQLException {
+        Producto producto = (Producto) resultSet.getObject("cod_producto");
+
         return new LineaVenta(
-                (Producto) resultSet.getObject("cod_producto"),
+                producto,
                 resultSet.getInt("cantidad"),
                 resultSet.getDouble("total"));
     }

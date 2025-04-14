@@ -26,11 +26,11 @@ public class VistaProducto {
         System.out.println("Introduce el precio:");
         double precio = Double.parseDouble(scanner.nextLine());
         System.out.println("Introduce las unidades: ");
-        int telefono = Integer.parseInt(scanner.nextLine());
+        int unidades = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el nombre del producto:");
         String nombre = scanner.nextLine();
 
-        return new Producto(cod_producto, precio, telefono, nombre);
+        return new Producto(cod_producto, precio, unidades, nombre);
     }
 
     public int obtenerCodAEliminar() {

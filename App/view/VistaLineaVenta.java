@@ -1,7 +1,9 @@
 package App.view;
 
+import App.db.ProductoDAO;
 import App.model.Cliente;
 import App.model.LineaVenta;
+import App.model.Producto;
 
 import java.util.List;
 import java.util.Scanner;
@@ -20,15 +22,13 @@ public class VistaLineaVenta {
         }
     }
 
-    public LineaVenta crearLineaVenta() {
-        System.out.println("Introduce el cod_producto:");
-        int cod_producto = Integer.parseInt(scanner.nextLine());
+    public LineaVenta crearLineaVenta(Producto producto) {
         System.out.println("Introduce la cantidad:");
         int cantidad = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el total: ");
         double total = Integer.parseInt(scanner.nextLine());
 
-        return new LineaVenta(cod_producto, cantidad, total);
+        return new LineaVenta(producto, cantidad, total);
     }
 
     public int obtenerCod_ProductoAEliminar() {
@@ -36,15 +36,13 @@ public class VistaLineaVenta {
         return scanner.nextInt();
     }
 
-    public LineaVenta obtenerDatosActualizados() {
-        System.out.println("Introduce el cod_producto:");
-        int cod_producto = Integer.parseInt(scanner.nextLine());
+    public LineaVenta obtenerDatosActualizados(Producto producto) {
         System.out.println("Introduce la nueva cantidad:");
         int cantidad = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el nuevo total: ");
         double total = Integer.parseInt(scanner.nextLine());
 
-        return new LineaVenta(cod_producto, cantidad, total);
+        return new LineaVenta(producto, cantidad, total);
     }
 
     public void mostrarMensaje(String mensaje) {

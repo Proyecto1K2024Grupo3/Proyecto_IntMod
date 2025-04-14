@@ -2,14 +2,18 @@ package App.view;
 
 import App.model.LineaVenta;
 import App.model.Merchandising;
+import App.model.Producto;
+
 
 import java.util.List;
 import java.util.Scanner;
 
 public class VistaMerchandising {
     public Scanner scanner;
+    private VistaProducto vistaProducto;
 
     public VistaMerchandising() {
+        this.vistaProducto = new VistaProducto();
         scanner = new Scanner(System.in);
     }
 
@@ -21,22 +25,13 @@ public class VistaMerchandising {
     }
 
     public Merchandising crearMerchandising() {
-        System.out.println("Introduce el nombre:");
-        String nombre = scanner.nextLine();
-        System.out.println("Introduce el precio:");
-        int precio = Integer.parseInt(scanner.nextLine());
-        System.out.println("Introduce las unidades: ");
-        int unidades = Integer.parseInt(scanner.nextLine());
-        System.out.println("Introduce el tipo: ");
+        Producto producto = vistaProducto.crearProductos();
+        System.out.println("Tipo del merchandising: ");
         String tipo = scanner.nextLine();
-        System.out.println("Introduce el tamanyo: ");
-        double tamanyo = Double.parseDouble(scanner.nextLine());
-        System.out.println("Introduce el proveedor: ");
-//        String proveedor = scanner.nextLine();
-        System.out.println("Introduce un empleado: ");
-//        String empleado = scanner.nextLine();
+        System.out.println("Tamaño del merchandising: ");
+        Double tamanyo = Double.parseDouble(scanner.nextLine());
 
-        return new Merchandising(nombre, precio, unidades, tipo, tamanyo,);
+        return new Merchandising(producto.getCod_producto(), producto.getNombre(), producto.getPrecio(), producto.getUnidades(), tipo, tamanyo);
     }
 
     public int obtenerTipoAEliminar() {
@@ -45,22 +40,13 @@ public class VistaMerchandising {
     }
 
     public Merchandising obtenerDatosActualizados() {
-        System.out.println("Introduce el nombre:");
-        String nombre = scanner.nextLine();
-        System.out.println("Introduce el nuevo precio:");
-        int precio = Integer.parseInt(scanner.nextLine());
-        System.out.println("Introduce las nuevas unidades: ");
-        int unidades = Integer.parseInt(scanner.nextLine());
-        System.out.println("Introduce el nuevo tipo: ");
+        Producto producto = vistaProducto.obtenerDatosActualizados();
+        System.out.println("Nuevo tipo del merchandising: ");
         String tipo = scanner.nextLine();
-        System.out.println("Introduce el nuevo tamanyo: ");
-        double tamanyo = Double.parseDouble(scanner.nextLine());
-        System.out.println("Introduce el nuevo proveedor: ");
-//        String proveedor = scanner.nextLine();
-        System.out.println("Introduce un nuevo empleado: ");
-//        String empleado = scanner.nextLine();
+        System.out.println("Nuevo tamaño del merchandising: ");
+        Double tamanyo = Double.parseDouble(scanner.nextLine());
 
-        return new Merchandising(nombre, precio, unidades, tipo, tamanyo,);
+        return new Merchandising(producto.getCod_producto(), producto.getNombre(), producto.getPrecio(), producto.getUnidades(), tipo, tamanyo);
     }
 
     public void mostrarMensaje(String mensaje) {

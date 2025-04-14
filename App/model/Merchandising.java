@@ -26,6 +26,12 @@ public class Merchandising extends Producto {
         this.tamanyo = tamanyo;
     }
 
+    public Merchandising(int cod, String nombre, double precio, int unidades, String tipo, double tamanyo) {
+        super(cod, precio, unidades, nombre);
+        this.tipo = tipo;
+        this.tamanyo = tamanyo;
+    }
+
     // Método getter para obtener el tipo (por ejemplo, tipo de objeto, nave, terreno, etc.)
     public String getTipo() {
         return tipo;
