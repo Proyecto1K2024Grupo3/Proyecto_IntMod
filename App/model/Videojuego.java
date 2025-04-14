@@ -59,4 +59,11 @@ public class Videojuego extends Producto {
                 .append("</Videojuego>");
         return xmlBuilder.toString();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Videojuego{" +
+                "f_lanzamiento='" + f_lanzamiento + '\'' +
+                '}';
+    }
 }

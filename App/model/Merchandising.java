@@ -84,4 +84,12 @@ public class Merchandising extends Producto {
         return xmlBuilder.toString();
     }
 
+    @Override
+    public String toString() {
+        String sup = super.toString();
+        return sup+ "Merchandising{" +
+                "tipo='" + tipo + '\'' +
+                ", tamanyo=" + tamanyo +
+                '}';
+    }
 }

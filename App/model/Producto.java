@@ -128,8 +128,6 @@ public class Producto {
                 ", precio=" + precio +
                 ", unidades=" + unidades +
                 ", nombre='" + nombre + '\'' +
-                ", provedor=" + provedor +
-                ", empleadoRegistro=" + empleadoRegistro +
                 '}';
     }
 }

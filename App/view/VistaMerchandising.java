@@ -40,10 +40,10 @@ public class VistaMerchandising {
     }
 
     public Merchandising obtenerDatosActualizados() {
-        Producto producto = vistaProducto.obtenerDatosActualizados();
+        Producto producto = vistaProducto.crearProductos();
         System.out.println("Nuevo tipo del merchandising: ");
         String tipo = scanner.nextLine();
-        System.out.println("Nuevo tamaño del merchandising: ");
+        System.out.println("Tamaño del merchandising: ");
         Double tamanyo = Double.parseDouble(scanner.nextLine());
 
         return new Merchandising(producto.getCod_producto(), producto.getNombre(), producto.getPrecio(), producto.getUnidades(), tipo, tamanyo);
