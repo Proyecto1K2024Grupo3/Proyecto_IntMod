@@ -7,29 +7,22 @@ import App.view.VistaMerchandising;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Controlador para gestionar las operaciones relacionadas con merchandising.
- * Conecta la vista (VistaMerchandising) con el modelo (MerchandisingDAO).
- * Permite realizar operaciones de consulta, creación, actualización y eliminación
- * sobre merchandising.
- *
- * @author Emilio, Pablo, Sergio
- */
 public class ControllerMerchandising {
     private MerchandisingDAO merchandisingDAO;
     private VistaMerchandising vistaMerchandising;
 
     /**
-     * Constructor del controlador de merchandising.
-     * Inicializa la vista y obtiene la instancia del DAO de merchandising.
+     * Constructor del controlador de empleados.
+     * Inicializa la vista y obtiene la instancia del DAO de empleados.
      */
     public ControllerMerchandising() {
+        // Crear conexión a la base de datos
         merchandisingDAO = MerchandisingDAO.getInstance();
         vistaMerchandising = new VistaMerchandising();
     }
 
     /**
-     * Muestra todos los merchandising almacenados en la base de datos.
+     * Muestra todos los empleados almacenados en la base de datos.
      */
     public void mostrarTodosLosMerchandising() {
         try {
@@ -41,12 +34,11 @@ public class ControllerMerchandising {
     }
 
     /**
-     * Busca y muestra un merchandising por su tipo.
-     *
-     * @param tipo Tipo de merchandising a buscar.
+     * Busca y muestra un empleado por su DNI ingresado desde la vista.
      */
-    public void mostrarMerchandisingByTipo(String tipo) {
+    public void mostrarMerchandisingByTipo() {
         try {
+            String tipo = vistaMerchandising.obtenerTipo();
             Merchandising merchandising = merchandisingDAO.getMerchandisingByTipo(tipo);
             vistaMerchandising.mostrarMerchandising(merchandising);
         } catch (SQLException e) {
@@ -55,12 +47,12 @@ public class ControllerMerchandising {
     }
 
     /**
-     * Crea un nuevo merchandising y lo inserta en la base de datos.
-     *
-     * @param merchandising Objeto Merchandising que contiene los datos del nuevo merchandising.
+     * Crea un nuevo empleado con los datos ingresados desde la vista
+     * y lo inserta en la base de datos.
      */
-    public void crearMerchandising(Merchandising merchandising) {
+    public void crearMerchandising() {
         try {
+            Merchandising merchandising = vistaMerchandising.crearMerchandising();
             merchandisingDAO.insertMerchandising(merchandising);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -68,12 +60,12 @@ public class ControllerMerchandising {
     }
 
     /**
-     * Actualiza la información de un merchandising existente con los datos proporcionados.
-     *
-     * @param merchandising Objeto Merchandising con los datos actualizados.
+     * Actualiza la información de un empleado existente con los datos
+     * proporcionados desde la vista.
      */
-    public void actualizarMerchandising(Merchandising merchandising) {
+    public void actualizarMerchandising() {
         try {
+            Merchandising merchandising = vistaMerchandising.obtenerDatosActualizados();
             merchandisingDAO.updateMerchandising(merchandising);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,13 +73,12 @@ public class ControllerMerchandising {
     }
 
     /**
-     * Elimina un merchandising de la base de datos usando el tipo ingresado desde la vista.
-     *
-     * @param tipo Tipo del merchandising que se desea eliminar.
+     * Elimina un empleado de la base de datos usando el DNI ingresado desde la vista.
      */
-    public void eliminarMerchandising(String tipo) {
+    public void eliminarMerchandising() {
         try {
-            merchandisingDAO.deleteMerchandisingByTipo(tipo);
+            int tipo = vistaMerchandising.obtenerCodAEliminar();
+            merchandisingDAO.deleteMerchandisingByCod(tipo);
         } catch (SQLException e) {
             e.printStackTrace();
         }

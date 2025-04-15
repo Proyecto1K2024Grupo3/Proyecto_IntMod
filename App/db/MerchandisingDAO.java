@@ -121,9 +121,9 @@ public class MerchandisingDAO {
      * @param tipo Tipo del merchandising a eliminar.
      * @throws SQLException Si ocurre un error en la base de datos.
      */
-    public void deleteMerchandisingByTipo(String tipo) throws SQLException {
+    public void deleteMerchandisingByCod(int cod) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(DELETE_QUERY)) {
-            statement.setString(1, tipo);
+            statement.setInt(1, cod);
             statement.executeUpdate();
         }
     }

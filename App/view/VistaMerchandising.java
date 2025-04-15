@@ -34,8 +34,8 @@ public class VistaMerchandising {
         return new Merchandising(producto.getCod_producto(), producto.getNombre(), producto.getPrecio(), producto.getUnidades(), tipo, tamanyo);
     }
 
-    public int obtenerTipoAEliminar() {
-        System.out.println("Introduce el tipo a eliminar:");
+    public int obtenerCodAEliminar() {
+        System.out.println("Introduce el codigo a eliminar:");
         return scanner.nextInt();
     }
 
