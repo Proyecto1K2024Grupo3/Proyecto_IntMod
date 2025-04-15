@@ -1,42 +1,28 @@
 package App.controller;
 
 import App.db.LineaVentaDAO;
-import App.db.ProductoDAO;
 import App.model.LineaVenta;
-import App.model.Producto;
 import App.view.VistaLineaVenta;
-import App.view.VistaProducto;
 
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Controlador para gestionar las operaciones relacionadas con las líneas de venta.
- * Conecta la vista (VistaLineaVenta) con el modelo (LineaVentaDAO).
- * Permite realizar operaciones de consulta, creación, actualización y eliminación
- * sobre las líneas de venta.
- *
- * @author Emilio, Pablo, Sergio
- */
 public class ControllerLineaVenta {
     private LineaVentaDAO lineaVentaDAO;
-    private ProductoDAO productoDAO;
     private VistaLineaVenta vistaLineaVenta;
-    private VistaProducto vistaProducto;
 
     /**
-     * Constructor del controlador de líneas de venta.
-     * Inicializa las vistas y obtiene la instancia de los DAOs.
+     * Constructor del controlador de empleados.
+     * Inicializa la vista y obtiene la instancia del DAO de empleados.
      */
     public ControllerLineaVenta() {
+        // Crear conexión a la base de datos
         lineaVentaDAO = LineaVentaDAO.getInstance();
-        productoDAO = ProductoDAO.getInstance();
-        vistaProducto = new VistaProducto();
         vistaLineaVenta = new VistaLineaVenta();
     }
 
     /**
-     * Muestra todas las líneas de venta almacenadas en la base de datos.
+     * Muestra todos los empleados almacenados en la base de datos.
      */
     public void mostrarTodasLasLineasDeVenta() {
         try {
@@ -48,13 +34,12 @@ public class ControllerLineaVenta {
     }
 
     /**
-     * Busca y muestra una línea de venta por el código del producto.
-     *
-     * @param codProducto Código del producto asociado a la línea de venta.
+     * Busca y muestra un empleado por su DNI ingresado desde la vista.
      */
-    public void mostrarLineaCodProducto(int codProducto) {
+    public void mostrarLineaCodProducto() {
         try {
-            LineaVenta lineaVenta = lineaVentaDAO.getLineaByCodProducto(codProducto);
+            int cod_producto = vistaLineaVenta.obtenerCodProducto();
+            LineaVenta lineaVenta = lineaVentaDAO.getLineaByCodProducto(cod_producto);
             vistaLineaVenta.mostrarLineaVenta(lineaVenta);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -62,14 +47,12 @@ public class ControllerLineaVenta {
     }
 
     /**
-     * Crea una nueva línea de venta y la inserta en la base de datos.
-     *
-     * @param producto Producto asociado a la línea de venta.
-     * @param lineaVenta Objeto LineaVenta que contiene los datos de la venta.
+     * Crea un nuevo empleado con los datos ingresados desde la vista
+     * y lo inserta en la base de datos.
      */
-    public void crearLineaVenta(Producto producto, LineaVenta lineaVenta) {
+    public void crearLineaVenta() {
         try {
-            // Aquí asumes que la línea ya viene bien formada con ese producto.
+            LineaVenta lineaVenta = vistaLineaVenta.crearLineaVenta();
             lineaVentaDAO.insertLineaVenta(lineaVenta);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -77,14 +60,12 @@ public class ControllerLineaVenta {
     }
 
     /**
-     * Actualiza los datos de una línea de venta existente.
-     *
-     * @param producto Producto asociado a la línea de venta.
-     * @param lineaVenta Objeto LineaVenta con los datos actualizados.
+     * Actualiza la información de un empleado existente con los datos
+     * proporcionados desde la vista.
      */
-    public void actualizarLineaVenta(Producto producto, LineaVenta lineaVenta) {
+    public void actualizarLineaVenta() {
         try {
-            // Actualiza la línea de venta con los nuevos datos.
+            LineaVenta lineaVenta = vistaLineaVenta.obtenerDatosActualizados();
             lineaVentaDAO.updateLineaVenta(lineaVenta);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -92,15 +73,15 @@ public class ControllerLineaVenta {
     }
 
     /**
-     * Elimina una línea de venta de la base de datos usando el código del producto.
-     *
-     * @param codProducto Código del producto cuya línea de venta se desea eliminar.
+     * Elimina un empleado de la base de datos usando el DNI ingresado desde la vista.
      */
-    public void eliminarLineaVenta(int codProducto) {
+    public void eliminarLineaVenta() {
         try {
-            lineaVentaDAO.deleteLineaVentaByCodProducto(codProducto);
+            int cod_producto = vistaLineaVenta.obtenerCod_ProductoAEliminar();
+            lineaVentaDAO.deleteLineaVentaByCodProducto(cod_producto);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }

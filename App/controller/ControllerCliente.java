@@ -42,11 +42,10 @@ public class ControllerCliente {
 
     /**
      * Busca y muestra un cliente por su DNI.
-     *
-     * @param dni DNI del cliente que se desea buscar.
      */
-    public void mostrarClienteDNI(String dni) {
+    public void mostrarClienteDNI() {
         try {
+            String dni = vistaCliente.obtenerDni();
             Cliente cliente = clienteDAO.getClienteByDni(dni);
             vistaCliente.mostrarCliente(cliente);
         } catch (SQLException e) {
@@ -56,11 +55,10 @@ public class ControllerCliente {
 
     /**
      * Crea un nuevo cliente y lo inserta en la base de datos.
-     *
-     * @param cliente Objeto Cliente que contiene los datos del nuevo cliente.
      */
-    public void crearCliente(Cliente cliente) {
+    public void crearCliente() {
         try {
+            Cliente cliente = vistaCliente.crearCliente();
             clienteDAO.insertCliente(cliente);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,11 +67,10 @@ public class ControllerCliente {
 
     /**
      * Actualiza la información de un cliente existente.
-     *
-     * @param cliente Objeto Cliente que contiene los datos actualizados.
      */
-    public void actualizarCliente(Cliente cliente) {
+    public void actualizarCliente() {
         try {
+            Cliente cliente = vistaCliente.obtenerDatosActualizados();
             clienteDAO.updateCliente(cliente);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,11 +79,10 @@ public class ControllerCliente {
 
     /**
      * Elimina un cliente de la base de datos usando su DNI.
-     *
-     * @param dni DNI del cliente que se desea eliminar.
      */
-    public void eliminarCliente(String dni) {
+    public void eliminarCliente() {
         try {
+            String dni = vistaCliente.obtenerDniAEliminar();
             clienteDAO.deleteClienteByDni(dni);
         } catch (SQLException e) {
             e.printStackTrace();

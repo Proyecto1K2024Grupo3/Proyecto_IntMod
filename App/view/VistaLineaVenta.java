@@ -5,14 +5,17 @@ import App.model.Cliente;
 import App.model.LineaVenta;
 import App.model.Producto;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
 public class VistaLineaVenta {
     public Scanner scanner;
+    ProductoDAO productoDAO;
 
     public VistaLineaVenta() {
         scanner = new Scanner(System.in);
+        productoDAO = ProductoDAO.getInstance();
     }
 
     public void mostrarLineasVentas(List<LineaVenta> lineaVentas) {
@@ -22,7 +25,12 @@ public class VistaLineaVenta {
         }
     }
 
-    public LineaVenta crearLineaVenta(Producto producto) {
+    public LineaVenta crearLineaVenta() throws SQLException {
+        System.out.println("Introduce el cod_producto:");
+        int cod_producto = Integer.parseInt(scanner.nextLine());
+
+        Producto producto = productoDAO.getProductoByCod(cod_producto);
+
         System.out.println("Introduce la cantidad:");
         int cantidad = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el total: ");
@@ -36,7 +44,12 @@ public class VistaLineaVenta {
         return scanner.nextInt();
     }
 
-    public LineaVenta obtenerDatosActualizados(Producto producto) {
+    public LineaVenta obtenerDatosActualizados() throws SQLException {
+        System.out.println("Introduce el cod_producto:");
+        int cod_producto = Integer.parseInt(scanner.nextLine());
+
+        Producto producto = productoDAO.getProductoByCod(cod_producto);
+
         System.out.println("Introduce la nueva cantidad:");
         int cantidad = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el nuevo total: ");
