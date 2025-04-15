@@ -1,6 +1,8 @@
 package App.model;
 
 /**
+ * Clase que representa Merchandising de un producto.
+ *
  * @author Pablo, Emilio y Sergio
  */
 

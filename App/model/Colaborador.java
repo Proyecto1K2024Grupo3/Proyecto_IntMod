@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * Clase que representa un Colaborador en el sistema.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class Colaborador {
     private String n_usuario;

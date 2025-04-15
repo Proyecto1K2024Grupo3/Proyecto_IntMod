@@ -4,7 +4,16 @@ import App.controller.ControllerProducto;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de productos.
+ * Proporciona un menú interactivo por consola para realizar operaciones CRUD sobre productos
+ * mediante el uso del ControllerProducto.
+ * Permite mostrar, crear, actualizar, eliminar y buscar productos por código.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestProducto {
+
     public static void main(String[] args) {
         ControllerProducto controlador = new ControllerProducto();
         Scanner scanner = new Scanner(System.in);

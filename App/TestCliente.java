@@ -4,7 +4,23 @@ import App.controller.ControllerCliente;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de clientes.
+ * Proporciona un menú en consola para interactuar con clientes del sistema
+ * utilizando el controlador ControllerCliente.
+ *
+ * Permite realizar operaciones CRUD sobre clientes.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestCliente {
+    /**
+     * Método principal que ejecuta la aplicación de prueba para clientes.
+     * Muestra un menú interactivo en consola para realizar acciones como crear,
+     * mostrar, actualizar o eliminar clientes.
+     *
+     * @param args Argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         ControllerCliente controlador = new ControllerCliente();
         Scanner scanner = new Scanner(System.in);

@@ -2,6 +2,8 @@ package App.model;
 
 /**
  * Clase que representa una Consola, la cual es un tipo de Producto en el sistema.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class Consola extends Producto {
 

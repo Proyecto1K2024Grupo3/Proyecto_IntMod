@@ -2,6 +2,8 @@ package App.model;
 
 /**
  * Clase que representa un Empleado en el sistema.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class Empleado {
     private int codEmpleado;

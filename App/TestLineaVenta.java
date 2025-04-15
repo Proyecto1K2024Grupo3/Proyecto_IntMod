@@ -1,11 +1,23 @@
 package App;
 
 import App.controller.ControllerLineaVenta;
-import App.controller.ControllerProveedores;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de líneas de venta.
+ * Proporciona un menú por consola para interactuar con las líneas de venta mediante ControllerLineaVenta.
+ * Permite realizar operaciones como mostrar, crear, actualizar, eliminar y buscar líneas de venta por código de producto.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestLineaVenta {
+    /**
+     * Método principal que ejecuta la aplicación de prueba para líneas de venta.
+     * Muestra un menú interactivo en consola que permite gestionar las líneas de venta.
+     *
+     * @param args Argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         ControllerLineaVenta controlador = new ControllerLineaVenta();
         Scanner scanner = new Scanner(System.in);

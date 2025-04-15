@@ -4,7 +4,21 @@ import App.controller.ControllerSala;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de salas.
+ * Proporciona un menú interactivo por consola para realizar operaciones CRUD sobre salas
+ * mediante el uso del ControllerSala.
+ * Permite mostrar, crear, actualizar, eliminar y buscar salas por número.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestSala {
+    /**
+     * Método principal que ejecuta el menú interactivo de gestión de salas.
+     * Muestra opciones por consola que permiten al usuario gestionar salas en el sistema.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados)
+     */
     public static void main(String[] args) {
         ControllerSala controlador = new ControllerSala();
         Scanner scanner = new Scanner(System.in);

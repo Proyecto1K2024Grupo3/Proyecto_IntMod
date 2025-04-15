@@ -2,6 +2,8 @@ package App.model;
 
 /**
  * Clase que representa una línea de venta.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class LineaVenta {
 

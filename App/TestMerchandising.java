@@ -1,11 +1,22 @@
 package App;
 
-import App.controller.ControllerLineaVenta;
 import App.controller.ControllerMerchandising;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de productos de merchandising.
+ * Proporciona un menú por consola para gestionar elementos de merchandising mediante ControllerMerchandising.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestMerchandising {
+    /**
+     * Método principal que ejecuta la aplicación de prueba para merchandising.
+     * Muestra un menú interactivo para gestionar los productos de merchandising.
+     *
+     * @param args Argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         ControllerMerchandising controlador = new ControllerMerchandising();
         Scanner scanner = new Scanner(System.in);

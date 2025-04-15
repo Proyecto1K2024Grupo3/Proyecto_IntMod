@@ -2,6 +2,8 @@ package App.model;
 
 /**
  * Clase que representa un Cliente en el sistema.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class Cliente {
     private int cod_cliente;

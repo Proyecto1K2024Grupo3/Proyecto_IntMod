@@ -1,6 +1,8 @@
 package App.model;
 
 /**
+ * Clase que representa un producto.
+ *
  * @author Pablo, Emilio y Sergio
  */
 public class Producto {

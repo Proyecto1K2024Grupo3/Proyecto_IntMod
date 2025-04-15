@@ -4,7 +4,22 @@ import App.controller.ControllerVideojuego;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de videojuegos.
+ * Proporciona un menú interactivo por consola para realizar operaciones CRUD sobre videojuegos
+ * mediante el uso del ControllerVideojuego.
+ *
+ * Permite mostrar, crear, actualizar, eliminar y buscar videojuegos por código.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestVideojuego {
+    /**
+     * Método principal que ejecuta el menú interactivo de gestión de videojuegos.
+     * Muestra opciones por consola que permiten al usuario gestionar videojuegos en el sistema.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados)
+     */
     public static void main(String[] args) {
         ControllerVideojuego controlador = new ControllerVideojuego();
         Scanner scanner = new Scanner(System.in);

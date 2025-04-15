@@ -4,7 +4,20 @@ import App.controller.ControllerColaborador;
 
 import java.util.Scanner;
 
+/**
+ * Clase de prueba para la gestión de colaboradores.
+ * Proporciona un menú interactivo por consola que permite realizar
+ * operaciones CRUD sobre colaboradores mediante ControllerColaborador.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class TestColaborador {
+    /**
+     * Método principal que ejecuta la aplicación de prueba para colaboradores.
+     * Muestra un menú en consola que permite al usuario interactuar con los datos de colaboradores.
+     *
+     * @param args Argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         ControllerColaborador controlador = new ControllerColaborador();
         Scanner scanner = new Scanner(System.in);

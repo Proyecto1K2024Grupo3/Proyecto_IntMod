@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * Clase que representa un Venta en el sistema.
+ * Clase que representa una venta en el sistema.
  * @author Emilio, Pablo, Sergio
  */
 public class Venta {

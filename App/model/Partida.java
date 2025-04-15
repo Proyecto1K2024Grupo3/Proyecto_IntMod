@@ -1,6 +1,8 @@
 package App.model;
 
 /**
+ * Clase que representa una partida.
+ *
  * @author: Pablo, Emilio y Sergio
  */
 

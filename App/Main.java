@@ -4,7 +4,20 @@ import App.controller.ControllerEmpleado;
 
 import java.util.Scanner;
 
+/**
+ * Clase principal del sistema. Proporciona un menú interactivo en consola
+ * para gestionar empleados a través de opciones como mostrar, crear,
+ * actualizar y eliminar registros.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class Main {
+    /**
+     * Método principal que inicia la aplicación.
+     * Proporciona un menú en consola para interactuar con empleados mediante el controlador correspondiente.
+     *
+     * @param args Argumentos de línea de comandos
+     */
     public static void main(String[] args) {
         ControllerEmpleado controlador = new ControllerEmpleado();
         Scanner scanner = new Scanner(System.in);
