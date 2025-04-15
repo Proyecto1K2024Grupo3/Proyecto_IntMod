@@ -10,6 +10,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase DAO encargada de la gestión de las operaciones con la tabla CLIENTE en la base de datos.
+ * Contiene métodos para insertar, obtener, actualizar, eliminar y obtener el total de clientes.
+ * Utiliza un patrón Singleton para asegurar que solo exista una instancia de la clase.
+ * @author Emilio, Pablo, Sergio
+ */
 public class ClienteDAO {
     private static ClienteDAO instance;
     private Connection connection;

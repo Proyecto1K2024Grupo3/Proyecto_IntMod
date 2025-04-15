@@ -5,6 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Clase DBConnection que gestiona la conexión a la base de datos.
+ * Implementa el patrón Singleton para asegurar una única instancia de conexión.
+ *
+ * @author Emilio, Pablo, Sergio
+ */
 public class DBConnection {
     // URL de conexión a la base de datos MySQL
     private static final String URL = "jdbc:mysql://proyecto.cp88kmeyiw48.us-east-1.rds.amazonaws.com:3306/ProyectoIntMod";
@@ -16,7 +22,10 @@ public class DBConnection {
     // Constructor privado para evitar instancias directas
     private DBConnection() {}
 
-    // Metodo estático para obtener la instancia única de la conexión
+    /**
+     * Método estático para obtener la instancia única de la conexión.
+     * @return La conexión a la base de datos.
+     */
     public static Connection getConnection() {
         if (connection == null) {
             // Bloqueo sincronizado para evitar concurrencia
@@ -33,7 +42,10 @@ public class DBConnection {
         }
         return connection;
     }
-    // Método para cerrar la conexión
+
+    /**
+     * Método para cerrar la conexión a la base de datos.
+     */
     public static void closeConnection() {
         if (connection != null) {
             try {

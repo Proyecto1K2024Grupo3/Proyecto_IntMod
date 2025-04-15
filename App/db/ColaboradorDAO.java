@@ -12,6 +12,8 @@ import java.util.List;
 /**
  * Clase ColaboradorDAO que gestiona el acceso a la base de datos para la entidad Colaborador.
  * Implementa el patrón Singleton para asegurar una única instancia.
+ *
+ * @author Emilio, Pablo, Sergio
  */
 public class ColaboradorDAO {
 
@@ -130,4 +132,3 @@ public class ColaboradorDAO {
         );
     }
 }
-

@@ -1,10 +1,7 @@
 package App.controller;
 
-import App.db.EmpleadoDAO;
 import App.db.LineaVentaDAO;
-import App.model.Empleado;
 import App.model.LineaVenta;
-import App.view.VistaEmpleado;
 import App.view.VistaLineaVenta;
 
 import java.sql.SQLException;
