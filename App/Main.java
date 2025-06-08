@@ -1,64 +1,53 @@
 package App;
 
-import App.controller.ControllerEmpleado;
-
 import java.util.Scanner;
 
-/**
- * Clase principal del sistema. Proporciona un menú interactivo en consola
- * para gestionar empleados a través de opciones como mostrar, crear,
- * actualizar y eliminar registros.
- *
- * @author Emilio, Pablo, Sergio
- */
 public class Main {
-    /**
-     * Método principal que inicia la aplicación.
-     * Proporciona un menú en consola para interactuar con empleados mediante el controlador correspondiente.
-     *
-     * @param args Argumentos de línea de comandos
-     */
     public static void main(String[] args) {
-        ControllerEmpleado controlador = new ControllerEmpleado();
         Scanner scanner = new Scanner(System.in);
-
         int opcion;
+
         do {
-            System.out.println("\nMenú:");
-            System.out.println("1. Mostrar todas los empleados");
-            System.out.println("2. Crear empleado");
-            System.out.println("3. Actualizar empleado");
-            System.out.println("4. Eliminar empleado");
-            System.out.println("5. Mostrar empleado por DNI");
-            System.out.println("6. Salir");
+            System.out.println("\n--- MENÚ PRINCIPAL ---");
+            System.out.println("1. Usar Cliente");
+            System.out.println("2. Usar Colaborador");
+            System.out.println("3. Usar LineaVenta");
+            System.out.println("4. Usar Merchandising");
+            System.out.println("5. Usar Producto");
+            System.out.println("6. Usar Proveedor");
+            System.out.println("7. Usar Sala");
+            System.out.println("8. Salir");
             System.out.print("Elige una opción: ");
             opcion = Integer.parseInt(scanner.nextLine());
 
             switch (opcion) {
                 case 1:
-                    controlador.mostrarTodosLosEmpleados();
+                    TestCliente.main(null);
                     break;
                 case 2:
-                    controlador.crearEmpleado();
-                    System.out.println("Persona creada correctamente.");
+                    TestColaborador.main(null);
                     break;
                 case 3:
-                    controlador.actualizarEmpleado();
-                    System.out.println("Persona actualizada correctamente.");
+                    TestLineaVenta.main(null);
                     break;
                 case 4:
-                    controlador.eliminarEmpleado();
-                    System.out.println("Persona eliminada correctamente.");
+                    TestMerchandising.main(null);
                     break;
                 case 5:
-                    controlador.mostrarEmpleadoDNI();
+                    TestProducto.main(null);
                     break;
                 case 6:
+                    TestProveedor.main(null);
+                    break;
+                case 7:
+                    TestSala.main(null);
+                    break;
+                case 8:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opción no válida.");
             }
-        } while (opcion != 6);
+        } while (opcion != 8);
     }
 }
