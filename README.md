@@ -11,7 +11,7 @@ Autores:
 ### Diseño de la base de datos
 
 1. [Sistema de información](/Documentacion/SistemaInformacion.md)
-2. [[Modelo entidad relación](/Documentacion/ModeloEntidadRelacion.md)(https://github.com/Proyecto1K2024Grupo3/Proyecto_IntMod/blob/main/Diagramas-Modelos/ModeloEntidadRelacion2.png)
+2. [Modelo entidad relación](/Documentacion/ModeloEntidadRelacion.md)(https://github.com/Proyecto1K2024Grupo3/Proyecto_IntMod/blob/main/Diagramas-Modelos/ModeloEntidadRelacion2.png)
 3. [Modelo Relacional](/Documentacion/ModeloRelacional.md)
 4. [Diccionario de Datos](/Documentacion/DiccionarioDeDatos.md)
 
