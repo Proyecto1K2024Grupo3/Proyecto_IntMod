@@ -21,12 +21,12 @@ public class EmpleadoDAO {
     private Connection connection;
 
     // Consultas SQL predefinidas para operaciones CRUD
-    private static final String INSERT_QUERY = "INSERT INTO EMPLEADO (dni, telefono, f_Nacimiento, nombre) VALUES (?, ?, ?, ?)";
-    private static final String SELECT_ALL_QUERY = "SELECT * FROM EMPLEADO";
-    private static final String SELECT_BY_DNI_QUERY = "SELECT * FROM EMPLEADO WHERE dni = ?";
-    private static final String UPDATE_QUERY = "UPDATE EMPLEADO SET telefono = ?, f_Nacimiento = ?, nombre = ? WHERE dni = ?";
-    private static final String DELETE_QUERY = "DELETE FROM EMPLEADO WHERE dni = ?";
-    private static final String TOTAL_PERSONAS_QUERY = "SELECT COUNT(*) FROM EMPLEADO";
+    private static final String INSERT_QUERY = "INSERT INTO empleado (dni, telefono, f_Nacimiento, nombre) VALUES (?, ?, ?, ?)";
+    private static final String SELECT_ALL_QUERY = "SELECT * FROM empleado";
+    private static final String SELECT_BY_DNI_QUERY = "SELECT * FROM empleado WHERE dni = ?";
+    private static final String UPDATE_QUERY = "UPDATE empleado SET telefono = ?, f_Nacimiento = ?, nombre = ? WHERE dni = ?";
+    private static final String DELETE_QUERY = "DELETE FROM empleado WHERE dni = ?";
+    private static final String TOTAL_PERSONAS_QUERY = "SELECT COUNT(*) FROM empleado";
 
     /**
      * Constructor privado para evitar instanciación externa.

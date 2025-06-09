@@ -20,12 +20,12 @@ public class ClienteDAO {
     private static ClienteDAO instance;
     private Connection connection;
 
-    private static final String SELECT_DNI_CLIENTE_QUERY = "SELECT * FROM CLIENTE WHERE dni = ?";
-    private static final String INSERT_CLIENTE_QUERY = "INSERT INTO CLIENTE (dni, nombre) VALUES (?, ?)";
-    private static final String TOTAL_CLIENTE_QUERY = "SELECT COUNT(*) FROM CLIENTE";
-    private static final String UPDATE_CLIENTE_QUERY = "UPDATE CLIENTE SET nombre = ?, dni = ?";
-    private static final String DELETE_CLIENTE_QUERY = "DELETE FROM CLIENTE WHERE dni = ?";
-    private static final String SELECT_ALL_QUERY = "SELECT * FROM CLIENTE";
+    private static final String SELECT_DNI_CLIENTE_QUERY = "SELECT * FROM cliente WHERE dni = ?";
+    private static final String INSERT_CLIENTE_QUERY = "INSERT INTO cliente (dni, nombre) VALUES (?, ?)";
+    private static final String TOTAL_CLIENTE_QUERY = "SELECT COUNT(*) FROM cliente";
+    private static final String UPDATE_CLIENTE_QUERY = "UPDATE cliente SET nombre = ?, dni = ?";
+    private static final String DELETE_CLIENTE_QUERY = "DELETE FROM cliente WHERE dni = ?";
+    private static final String SELECT_ALL_QUERY = "SELECT * FROM cliente";
 
 
     /**
